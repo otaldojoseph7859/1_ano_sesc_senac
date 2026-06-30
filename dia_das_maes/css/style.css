@@ -1,0 +1,206 @@
+/* O (*) Aplica estilo para todo o site */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Emilys Candy';
+}
+
+/* A tag <body> aplica estilo para todos os elementos do site */
+body {
+    background-color: #f4e5ec;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section img {
+  width: 100%;
+  height: auto;
+  filter: brightness(65%);
+}
+
+.hero-section h1 {
+  position: absolute;
+  z-index: 2;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  color: #ffffff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 10px 40px;
+  border-radius: 24px;
+  backdrop-filter: blur(6px);
+
+  text-shadow:
+    2px 2px 0 #c94f8c,
+    4px 4px 0 #a83a73,
+    6px 6px 12px rgba(168, 58, 115, 0.65);
+
+  -webkit-text-stroke: 1px #c94f8c;
+}
+
+.hero-section .carousel {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+  z-index: 3;
+}
+
+.sobre {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff5f5;
+    border-radius: 24px;
+    padding: 25px;
+}
+
+.sobre h1{
+    font-size: 64px;
+    font-weight: 600;
+    color: #AA2B69;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sobre p{
+    font-size: 24px;
+    color: #710124;
+    margin: 25px 10px;
+}
+
+.sobre h2{
+    font-size: 32px;
+    font-weight: 600;
+    color: #710124;
+    margin: 0 10px;
+    margin-bottom: 15px;
+}
+
+.sobre ul{
+    margin: 0 10px;
+}
+
+.sobre ul li{
+    margin: 10px 50px;
+    list-style: circle;
+    color: #710124;
+    font-size: 24px;
+}
+
+.foto{
+    width: 80%;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+.foto figure img{
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+}
+
+.foto figure figcaption{
+    font-size: 16px;
+    color: #710124;
+    text-align: center;
+}
+
+.formulario {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.formulario .form-cta{
+    width: 60%;
+    height: auto;
+    background-color: #fff5f5;
+    border-radius: 24px;
+    padding: 25px;
+    margin: 0 auto;
+}
+
+.form-cta h3{
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #D73A8B;
+}
+
+.lead-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-row label {
+    color: #D73A8B;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.form-row input {
+    height: 40px;
+    background-color: #F8E2E2;
+    border: none;
+    border-radius: 12px;
+    padding: 0 12px;
+}
+
+.form-row textarea {
+    height: 120px;
+    background-color: #F8E2E2;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 12px;
+    resize: none;
+}
+
+.lead-form .btn {
+    width: 200px;
+    height: 40px;
+    border-radius: 24px;
+    border: none;
+    background-color: #AA2B69;
+    color: #ffffff;
+    margin: 0 auto;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.lead-form .btn:hover{
+    background-color: #c05287;
+}
+
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: #AA2B69;
+}
+
+footer p{
+    text-align: center;
+    padding: 67px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
