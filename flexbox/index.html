@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Flexbox</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <span class="page-label">Laboratório interativo</span>
+        <h1>Flexbox Playground</h1>
+        <p>
+            Experimente as propriedades do Flexbox e observe as alterações em tempo real.
+        </p>
+    </header>
+
+    <nav class="property-navigation" aria-label="Navegação das propriedades">
+        <a href="#flex-direction">flex-direction</a>
+        <a href="#justify-content">justify-content</a>
+        <a href="#align-items">align-items</a>
+        <a href="#gap">gap</a>
+        <a href="#flex-wrap">flex-wrap</a>
+        <a href="#flex-flow">flex-flow</a>
+        <a href="#align-content">align-content</a>
+        <a href="#order">order</a>
+        <a href="#flex-grow">flex-grow</a>
+        <a href="#flex-shrink">flex-shrink</a>
+        <a href="#flex-basis">flex-basis</a>
+        <a href="#flex">flex</a>
+        <a href="#align-self">align-self</a>
+    </nav>
+
+    <!-- ===================================================
+        flex-direction
+    =================================================== -->
+
+    <section class="demo" id="flex-direction">
+        <h2>flex-direction</h2>
+        <p>
+            Clique em um botão para alterar a direção dos elementos.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-direction="row">
+                row
+            </button>
+            <button aria-pressed="false" data-direction="row-reverse">
+                row-reverse
+            </button>
+            <button aria-pressed="false" data-direction="column">
+                column
+            </button>
+            <button aria-pressed="false" data-direction="column-reverse">
+                column-reverse
+            </button>
+        </div>
+        <div class="container" id="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+<pre class="code">
+<code>.container {
+    flex-direction: <strong class="justify-value">row</strong>;
+}
+</code>
+</pre>
+    </section>
+
+    <!-- ===================================================
+        justify-content
+    =================================================== -->
+
+    <section class="demo" id="justify-content">
+        <h2>justify-content</h2>
+        <p>
+            Altera o posicionamento dos elementos ao longo do eixo principal (Main Axis).
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-justify="flex-start">flex-start</button>
+            <button aria-pressed="false" data-justify="center">center</button>
+            <button aria-pressed="false" data-justify="flex-end">flex-end</button>
+            <button aria-pressed="false" data-justify="space-between">space-between</button>
+            <button aria-pressed="false" data-justify="space-around">space-around</button>
+            <button aria-pressed="false" data-justify="space-evenly">space-evenly</button>
+        </div>
+        <div class="container justify-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+<pre class="code">
+<code>.container {
+    justify-content: <strong class="justify-value">flex-start</strong>;
+}
+</code>
+</pre>
+    </section>
+
+    <!-- ===================================================
+        align-items
+    =================================================== -->
+
+    <section class="demo" id="align-items">
+        <h2>align-items</h2>
+        <p>
+            Altera o posicionamento dos elementos ao longo do eixo secundário (Cross Axis).
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-align="stretch">stretch</button>
+            <button aria-pressed="false" data-align="flex-start">flex-start</button>
+            <button aria-pressed="false" data-align="center">center</button>
+            <button aria-pressed="false" data-align="flex-end">flex-end</button>
+            <button aria-pressed="false" data-align="baseline">baseline</button>
+        </div>
+        <div class="container align-container">
+            <div class="item">
+                1
+            </div>
+            <div class="item">
+                <p>2</p>
+            </div>
+            <div class="item">
+                <small>3</small>
+            </div>
+            <div class="item">
+                4
+            </div>
+        </div>
+        <div class="code">
+            <span>align-items:</span>
+            <strong class="align-value">
+                stretch
+            </strong>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        gap
+    =================================================== -->
+
+    <section class="demo" id="gap">
+        <h2>gap</h2>
+        <p>
+            Define o espaçamento entre os elementos flexíveis, sem a necessidade de utilizar margens.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-gap="0px">0px</button>
+            <button aria-pressed="false" data-gap="10px">10px</button>
+            <button aria-pressed="false" data-gap="20px">20px</button>
+            <button aria-pressed="false" data-gap="40px">40px</button>
+            <button aria-pressed="false" data-gap="60px">60px</button>
+        </div>
+        <div class="container gap-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+        <div class="code">
+            <span>gap:</span>
+            <strong class="gap-value">
+                10px
+            </strong>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        flex-wrap
+    =================================================== -->
+
+    <section class="demo" id="flex-wrap">
+        <h2>flex-wrap</h2>
+        <p>
+            Define como os elementos se comportam quando não há espaço suficiente dentro do container.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-wrap="nowrap">nowrap</button>
+            <button aria-pressed="false" data-wrap="wrap">wrap</button>
+            <button aria-pressed="false" data-wrap="wrap-reverse">wrap-reverse</button>
+        </div>
+        <div class="container wrap-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+        </div>
+        <div class="code">
+            <span>flex-wrap:</span>
+            <strong class="wrap-value">
+                nowrap
+            </strong>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        flex-flow
+    =================================================== -->
+
+    <section class="demo" id="flex-flow">
+        <h2>flex-flow</h2>
+        <p>
+            Define a direção dos elementos e o comportamento da quebra de linha
+            utilizando uma única propriedade.
+        </p>
+        <div class="buttons flex-flow-buttons">
+            <button class="active" aria-pressed="true" data-flow="row nowrap">
+                row nowrap
+            </button>
+            <button aria-pressed="false" data-flow="row wrap">
+                row wrap
+            </button>
+            <button aria-pressed="false" data-flow="row wrap-reverse">
+                row wrap-reverse
+            </button>
+            <button aria-pressed="false" data-flow="row-reverse wrap">
+                row-reverse wrap
+            </button>
+            <button aria-pressed="false" data-flow="column nowrap">
+                column nowrap
+            </button>
+            <button aria-pressed="false" data-flow="column wrap">
+                column wrap
+            </button>
+            <button aria-pressed="false" data-flow="column wrap-reverse">
+                column wrap-reverse
+            </button>
+            <button aria-pressed="false" data-flow="column-reverse wrap">
+                column-reverse wrap
+            </button>
+        </div>
+        <div class="container flow-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+        </div>
+        <div class="code">
+            <span>flex-flow:</span>
+            <strong class="flow-value">
+                row nowrap
+            </strong>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        align-content
+    =================================================== -->
+
+    <section class="demo" id="align-content">
+
+        <h2>align-content</h2>
+        <p>
+            Define como as linhas de elementos são distribuídas no eixo secundário
+            quando existe quebra de linha.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-align-content="stretch">
+                stretch
+            </button>
+            <button aria-pressed="false" data-align-content="flex-start">
+                flex-start
+            </button>
+            <button aria-pressed="false" data-align-content="center">
+                center
+            </button>
+            <button aria-pressed="false" data-align-content="flex-end">
+                flex-end
+            </button>
+            <button aria-pressed="false" data-align-content="space-between">
+                space-between
+            </button>
+            <button aria-pressed="false" data-align-content="space-around">
+                space-around
+            </button>
+            <button aria-pressed="false" data-align-content="space-evenly">
+                space-evenly
+            </button>
+        </div>
+        <div class="container align-content-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+        </div>
+        <div class="code">
+            <span>align-content:</span>
+            <strong class="align-content-value">
+                stretch
+            </strong>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        order
+    =================================================== -->
+
+    <section class="demo" id="order">
+        <h2>order</h2>
+        <p>
+            Define a ordem em que um item será exibido dentro do container flexível.
+            Nesta demonstração, apenas o <strong>Item 3</strong> terá sua ordem alterada.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-order="-1">-1</button>
+            <button aria-pressed="false" data-order="0">0 (Padrão)</button>
+            <button aria-pressed="false" data-order="1">1</button>
+            <button aria-pressed="false" data-order="2">2</button>
+            <button aria-pressed="false" data-order="3">3</button>
+        </div>
+        <div class="container order-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item item-order">
+                3
+            </div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+        <div class="code">
+            <span>.item-3 { order:</span>
+            <strong class="order-value">
+                0
+            </strong>
+            <span>; }</span>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        flex-grow
+    =================================================== -->
+
+    <section class="demo" id="flex-grow">
+        <h2>flex-grow</h2>
+        <p>
+            Define quanto um item poderá crescer em relação aos demais, ocupando o
+            espaço livre disponível no container. Nesta demonstração, apenas o
+            <strong>Item 3</strong> terá seu valor alterado.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-grow="0">0</button>
+            <button aria-pressed="false" data-grow="1">1</button>
+            <button aria-pressed="false" data-grow="2">2</button>
+            <button aria-pressed="false" data-grow="3">3</button>
+            <button aria-pressed="false" data-grow="5">5</button>
+        </div>
+        <div class="container grow-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item item-grow">
+                3
+            </div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+        <div class="code">
+            <span>.item-3 { flex-grow:</span>
+            <strong class="grow-value">
+                0
+            </strong>
+            <span>; }</span>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        flex-shrink
+    =================================================== -->
+
+    <section class="demo" id="flex-shrink">
+
+        <h2>flex-shrink</h2>
+        <p>
+            Define quanto um item poderá encolher quando não houver espaço suficiente
+            dentro do container. Nesta demonstração, apenas o
+            <strong>Item 3</strong> terá seu valor alterado.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-shrink="0">0</button>
+            <button aria-pressed="false" data-shrink="1">1 (Padrão)</button>
+            <button aria-pressed="false" data-shrink="2">2</button>
+            <button aria-pressed="false" data-shrink="3">3</button>
+            <button aria-pressed="false" data-shrink="5">5</button>
+        </div>
+        <div class="container shrink-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item item-shrink">
+                3
+            </div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+        <div class="code">
+            <span>.item-3 { flex-shrink:</span>
+            <strong class="shrink-value">
+                1
+            </strong>
+            <span>; }</span>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        flex-basis
+    =================================================== -->
+
+    <section class="demo" id="flex-basis">
+
+        <h2>flex-basis</h2>
+        <p>
+            Define o tamanho inicial de um item flexível antes da distribuição do
+            espaço disponível. Nesta demonstração, apenas o <strong>Item 3</strong>
+            terá seu valor alterado.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-basis="50px">50px</button>
+            <button aria-pressed="false" data-basis="100px">100px</button>
+            <button aria-pressed="false" data-basis="150px">150px</button>
+            <button aria-pressed="false" data-basis="200px">200px</button>
+            <button aria-pressed="false" data-basis="300px">300px</button>
+            <button aria-pressed="false" data-basis="auto">auto</button>
+        </div>
+        <div class="container basis-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item item-basis">
+                3
+            </div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+        <div class="code">
+            <span>.item-3 { flex-basis:</span>
+            <strong class="basis-value">
+                auto
+            </strong>
+            <span>; }</span>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        flex
+    =================================================== -->
+
+    <section class="demo" id="flex">
+        <h2>flex</h2>
+        <p>
+            A propriedade <strong>flex</strong> é uma forma resumida de definir
+            <strong>flex-grow</strong>, <strong>flex-shrink</strong> e
+            <strong>flex-basis</strong>. Nesta demonstração, apenas o
+            <strong>Item 3</strong> será alterado.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-flex="0 1 auto">
+                0 1 auto
+            </button>
+            <button aria-pressed="false" data-flex="1 1 auto">
+                1 1 auto
+            </button>
+            <button aria-pressed="false" data-flex="1 0 150px">
+                1 0 150px
+            </button>
+            <button aria-pressed="false" data-flex="2 1 100px">
+                2 1 100px
+            </button>
+            <button aria-pressed="false" data-flex="0 0 200px">
+                0 0 200px
+            </button>
+            <button aria-pressed="false" data-flex="1">
+                flex: 1
+            </button>
+            <button aria-pressed="false" data-flex="auto">
+                auto
+            </button>
+            <button aria-pressed="false" data-flex="none">
+                none
+            </button>
+        </div>
+        <div class="container flex-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item item-flex">
+                3
+            </div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+        <div class="code">
+            <span>.item-3 { flex:</span>
+            <strong class="flex-value">
+                0 1 auto
+            </strong>
+
+            <span>; }</span>
+        </div>
+        <div class="flex-details">
+            <p>
+                flex-grow:
+                <strong class="flex-grow-value">0</strong>
+            </p>
+            <p>
+                flex-shrink:
+                <strong class="flex-shrink-value">1</strong>
+            </p>
+            <p>
+                flex-basis:
+                <strong class="flex-basis-value">auto</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================================================
+        align-self
+    =================================================== -->
+
+    <section class="demo" id="align-self">
+        <h2>align-self</h2>
+        <p>
+            Define o alinhamento de apenas um item no eixo secundário, substituindo
+            o valor de <strong>align-items</strong> definido no container.
+            Nesta demonstração, apenas o <strong>Item 3</strong> será alterado.
+        </p>
+        <div class="buttons">
+            <button class="active" aria-pressed="true" data-align-self="auto">
+                auto
+            </button>
+            <button aria-pressed="false" data-align-self="stretch">
+                stretch
+            </button>
+            <button aria-pressed="false" data-align-self="flex-start">
+                flex-start
+            </button>
+            <button aria-pressed="false" data-align-self="center">
+                center
+            </button>
+            <button aria-pressed="false" data-align-self="flex-end">
+                flex-end
+            </button>
+            <button aria-pressed="false" data-align-self="baseline">
+                baseline
+            </button>
+        </div>
+        <div class="container align-self-container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item item-align-self">
+                3
+            </div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+        <div class="code">
+            <span>.item-3 { align-self:</span>
+            <strong class="align-self-value">
+                auto
+            </strong>
+            <span>; }</span>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
