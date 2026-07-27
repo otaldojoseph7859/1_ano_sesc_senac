@@ -1,24 +1,47 @@
+<!-- Define que o documento utiliza HTML5. Deve ser a primeira declaração do arquivo. -->
 <!DOCTYPE html>
+<!-- A tag html envolve toda a página. lang="pt-BR" informa o idioma para navegadores e leitores de tela. -->
 <html lang="pt-BR">
 
+<!-- O head guarda configurações e informações que não aparecem diretamente no conteúdo visual. -->
 <head>
+    <!-- Permite utilizar acentos, cedilha e outros caracteres especiais corretamente. -->
     <meta charset="UTF-8">
+    <!-- Faz o layout respeitar a largura real de celulares, tablets e computadores. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descrição usada por mecanismos de busca e no compartilhamento do link. -->
+    <meta name="description"
+        content="Laboratório interativo para aprender e praticar as principais propriedades do CSS Flexbox.">
+    <!-- Texto exibido na aba do navegador. -->
     <title>Laboratório Flexbox</title>
+    <!-- Conecta o HTML ao arquivo CSS responsável pela aparência da página. -->
     <link rel="stylesheet" href="style/style.css">
 </head>
 
+<!-- O body contém todo o conteúdo visível da página. -->
 <body>
 
+    <!-- ===================================================
+         CABEÇALHO PRINCIPAL
+         Apresenta o nome e a proposta do laboratório.
+    =================================================== -->
     <header class="page-header">
+        <!-- Pequeno rótulo visual acima do título principal. -->
         <span class="page-label">Laboratório interativo</span>
+        <!-- h1 é o título principal e deve representar o assunto da página. -->
         <h1>Flexbox Playground</h1>
         <p>
-            Experimente as propriedades do Flexbox e observe as alterações em tempo real.
+            Clique nos valores, observe as mudanças e relacione cada resultado visual
+            com o código CSS aplicado.
         </p>
     </header>
 
-    <nav class="property-navigation" aria-label="Navegação das propriedades">
+    <!-- ===================================================
+         NAVEGAÇÃO INTERNA
+         Cada link aponta para o id de uma seção da página.
+         aria-label descreve o menu para tecnologias assistivas.
+    =================================================== -->
+    <nav class="property-navigation" aria-label="Navegação das propriedades do Flexbox">
         <a href="#flex-direction">flex-direction</a>
         <a href="#justify-content">justify-content</a>
         <a href="#align-items">align-items</a>
@@ -32,550 +55,1073 @@
         <a href="#flex-basis">flex-basis</a>
         <a href="#flex">flex</a>
         <a href="#align-self">align-self</a>
+        <a href="#desafio">desafio</a>
     </nav>
 
-    <!-- ===================================================
-        flex-direction
-    =================================================== -->
+    <!-- O main reúne o conteúdo principal do laboratório. -->
+    <main>
+        <!-- ===================================================
+             PARTE 1 — PROPRIEDADES DO FLEX CONTAINER
+             São aplicadas ao elemento pai, responsável por organizar os itens.
+        =================================================== -->
+        <header class="group-header">
+            <span>Parte 1</span>
+            <h2>Propriedades do Flex Container</h2>
+            <p>Estas propriedades são aplicadas ao elemento que contém os itens.</p>
+        </header>
 
-    <section class="demo" id="flex-direction">
-        <h2>flex-direction</h2>
-        <p>
-            Clique em um botão para alterar a direção dos elementos.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-direction="row">
-                row
-            </button>
-            <button aria-pressed="false" data-direction="row-reverse">
-                row-reverse
-            </button>
-            <button aria-pressed="false" data-direction="column">
-                column
-            </button>
-            <button aria-pressed="false" data-direction="column-reverse">
-                column-reverse
-            </button>
-        </div>
-        <div class="container" id="container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-        </div>
-<pre class="code">
-<code>.container {
-    flex-direction: <strong class="justify-value">row</strong>;
-}
-</code>
-</pre>
-    </section>
-
-    <!-- ===================================================
-        justify-content
-    =================================================== -->
-
-    <section class="demo" id="justify-content">
-        <h2>justify-content</h2>
-        <p>
-            Altera o posicionamento dos elementos ao longo do eixo principal (Main Axis).
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-justify="flex-start">flex-start</button>
-            <button aria-pressed="false" data-justify="center">center</button>
-            <button aria-pressed="false" data-justify="flex-end">flex-end</button>
-            <button aria-pressed="false" data-justify="space-between">space-between</button>
-            <button aria-pressed="false" data-justify="space-around">space-around</button>
-            <button aria-pressed="false" data-justify="space-evenly">space-evenly</button>
-        </div>
-        <div class="container justify-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-        </div>
-<pre class="code">
-<code>.container {
-    justify-content: <strong class="justify-value">flex-start</strong>;
-}
-</code>
-</pre>
-    </section>
-
-    <!-- ===================================================
-        align-items
-    =================================================== -->
-
-    <section class="demo" id="align-items">
-        <h2>align-items</h2>
-        <p>
-            Altera o posicionamento dos elementos ao longo do eixo secundário (Cross Axis).
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-align="stretch">stretch</button>
-            <button aria-pressed="false" data-align="flex-start">flex-start</button>
-            <button aria-pressed="false" data-align="center">center</button>
-            <button aria-pressed="false" data-align="flex-end">flex-end</button>
-            <button aria-pressed="false" data-align="baseline">baseline</button>
-        </div>
-        <div class="container align-container">
-            <div class="item">
-                1
+        <!-- ===================================================
+             SEÇÃO: flex-direction
+             Define a direção do eixo principal e a ordem inicial dos itens.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="flex-direction">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type">Flex Container</span>
+                    <h2>flex-direction</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="direction">Restaurar padrão</button>
             </div>
-            <div class="item">
-                <p>2</p>
-            </div>
-            <div class="item">
-                <small>3</small>
-            </div>
-            <div class="item">
-                4
-            </div>
-        </div>
-        <div class="code">
-            <span>align-items:</span>
-            <strong class="align-value">
-                stretch
-            </strong>
-        </div>
-    </section>
 
-    <!-- ===================================================
-        gap
-    =================================================== -->
-
-    <section class="demo" id="gap">
-        <h2>gap</h2>
-        <p>
-            Define o espaçamento entre os elementos flexíveis, sem a necessidade de utilizar margens.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-gap="0px">0px</button>
-            <button aria-pressed="false" data-gap="10px">10px</button>
-            <button aria-pressed="false" data-gap="20px">20px</button>
-            <button aria-pressed="false" data-gap="40px">40px</button>
-            <button aria-pressed="false" data-gap="60px">60px</button>
-        </div>
-        <div class="container gap-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-        </div>
-        <div class="code">
-            <span>gap:</span>
-            <strong class="gap-value">
-                10px
-            </strong>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        flex-wrap
-    =================================================== -->
-
-    <section class="demo" id="flex-wrap">
-        <h2>flex-wrap</h2>
-        <p>
-            Define como os elementos se comportam quando não há espaço suficiente dentro do container.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-wrap="nowrap">nowrap</button>
-            <button aria-pressed="false" data-wrap="wrap">wrap</button>
-            <button aria-pressed="false" data-wrap="wrap-reverse">wrap-reverse</button>
-        </div>
-        <div class="container wrap-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-            <div class="item">6</div>
-            <div class="item">7</div>
-            <div class="item">8</div>
-        </div>
-        <div class="code">
-            <span>flex-wrap:</span>
-            <strong class="wrap-value">
-                nowrap
-            </strong>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        flex-flow
-    =================================================== -->
-
-    <section class="demo" id="flex-flow">
-        <h2>flex-flow</h2>
-        <p>
-            Define a direção dos elementos e o comportamento da quebra de linha
-            utilizando uma única propriedade.
-        </p>
-        <div class="buttons flex-flow-buttons">
-            <button class="active" aria-pressed="true" data-flow="row nowrap">
-                row nowrap
-            </button>
-            <button aria-pressed="false" data-flow="row wrap">
-                row wrap
-            </button>
-            <button aria-pressed="false" data-flow="row wrap-reverse">
-                row wrap-reverse
-            </button>
-            <button aria-pressed="false" data-flow="row-reverse wrap">
-                row-reverse wrap
-            </button>
-            <button aria-pressed="false" data-flow="column nowrap">
-                column nowrap
-            </button>
-            <button aria-pressed="false" data-flow="column wrap">
-                column wrap
-            </button>
-            <button aria-pressed="false" data-flow="column wrap-reverse">
-                column wrap-reverse
-            </button>
-            <button aria-pressed="false" data-flow="column-reverse wrap">
-                column-reverse wrap
-            </button>
-        </div>
-        <div class="container flow-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-            <div class="item">6</div>
-            <div class="item">7</div>
-            <div class="item">8</div>
-        </div>
-        <div class="code">
-            <span>flex-flow:</span>
-            <strong class="flow-value">
-                row nowrap
-            </strong>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        align-content
-    =================================================== -->
-
-    <section class="demo" id="align-content">
-
-        <h2>align-content</h2>
-        <p>
-            Define como as linhas de elementos são distribuídas no eixo secundário
-            quando existe quebra de linha.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-align-content="stretch">
-                stretch
-            </button>
-            <button aria-pressed="false" data-align-content="flex-start">
-                flex-start
-            </button>
-            <button aria-pressed="false" data-align-content="center">
-                center
-            </button>
-            <button aria-pressed="false" data-align-content="flex-end">
-                flex-end
-            </button>
-            <button aria-pressed="false" data-align-content="space-between">
-                space-between
-            </button>
-            <button aria-pressed="false" data-align-content="space-around">
-                space-around
-            </button>
-            <button aria-pressed="false" data-align-content="space-evenly">
-                space-evenly
-            </button>
-        </div>
-        <div class="container align-content-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-            <div class="item">6</div>
-            <div class="item">7</div>
-            <div class="item">8</div>
-        </div>
-        <div class="code">
-            <span>align-content:</span>
-            <strong class="align-content-value">
-                stretch
-            </strong>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        order
-    =================================================== -->
-
-    <section class="demo" id="order">
-        <h2>order</h2>
-        <p>
-            Define a ordem em que um item será exibido dentro do container flexível.
-            Nesta demonstração, apenas o <strong>Item 3</strong> terá sua ordem alterada.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-order="-1">-1</button>
-            <button aria-pressed="false" data-order="0">0 (Padrão)</button>
-            <button aria-pressed="false" data-order="1">1</button>
-            <button aria-pressed="false" data-order="2">2</button>
-            <button aria-pressed="false" data-order="3">3</button>
-        </div>
-        <div class="container order-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item item-order">
-                3
-            </div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-        </div>
-        <div class="code">
-            <span>.item-3 { order:</span>
-            <strong class="order-value">
-                0
-            </strong>
-            <span>; }</span>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        flex-grow
-    =================================================== -->
-
-    <section class="demo" id="flex-grow">
-        <h2>flex-grow</h2>
-        <p>
-            Define quanto um item poderá crescer em relação aos demais, ocupando o
-            espaço livre disponível no container. Nesta demonstração, apenas o
-            <strong>Item 3</strong> terá seu valor alterado.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-grow="0">0</button>
-            <button aria-pressed="false" data-grow="1">1</button>
-            <button aria-pressed="false" data-grow="2">2</button>
-            <button aria-pressed="false" data-grow="3">3</button>
-            <button aria-pressed="false" data-grow="5">5</button>
-        </div>
-        <div class="container grow-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item item-grow">
-                3
-            </div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-        </div>
-        <div class="code">
-            <span>.item-3 { flex-grow:</span>
-            <strong class="grow-value">
-                0
-            </strong>
-            <span>; }</span>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        flex-shrink
-    =================================================== -->
-
-    <section class="demo" id="flex-shrink">
-
-        <h2>flex-shrink</h2>
-        <p>
-            Define quanto um item poderá encolher quando não houver espaço suficiente
-            dentro do container. Nesta demonstração, apenas o
-            <strong>Item 3</strong> terá seu valor alterado.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-shrink="0">0</button>
-            <button aria-pressed="false" data-shrink="1">1 (Padrão)</button>
-            <button aria-pressed="false" data-shrink="2">2</button>
-            <button aria-pressed="false" data-shrink="3">3</button>
-            <button aria-pressed="false" data-shrink="5">5</button>
-        </div>
-        <div class="container shrink-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item item-shrink">
-                3
-            </div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-        </div>
-        <div class="code">
-            <span>.item-3 { flex-shrink:</span>
-            <strong class="shrink-value">
-                1
-            </strong>
-            <span>; }</span>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        flex-basis
-    =================================================== -->
-
-    <section class="demo" id="flex-basis">
-
-        <h2>flex-basis</h2>
-        <p>
-            Define o tamanho inicial de um item flexível antes da distribuição do
-            espaço disponível. Nesta demonstração, apenas o <strong>Item 3</strong>
-            terá seu valor alterado.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-basis="50px">50px</button>
-            <button aria-pressed="false" data-basis="100px">100px</button>
-            <button aria-pressed="false" data-basis="150px">150px</button>
-            <button aria-pressed="false" data-basis="200px">200px</button>
-            <button aria-pressed="false" data-basis="300px">300px</button>
-            <button aria-pressed="false" data-basis="auto">auto</button>
-        </div>
-        <div class="container basis-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item item-basis">
-                3
-            </div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-        </div>
-        <div class="code">
-            <span>.item-3 { flex-basis:</span>
-            <strong class="basis-value">
-                auto
-            </strong>
-            <span>; }</span>
-        </div>
-    </section>
-
-    <!-- ===================================================
-        flex
-    =================================================== -->
-
-    <section class="demo" id="flex">
-        <h2>flex</h2>
-        <p>
-            A propriedade <strong>flex</strong> é uma forma resumida de definir
-            <strong>flex-grow</strong>, <strong>flex-shrink</strong> e
-            <strong>flex-basis</strong>. Nesta demonstração, apenas o
-            <strong>Item 3</strong> será alterado.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-flex="0 1 auto">
-                0 1 auto
-            </button>
-            <button aria-pressed="false" data-flex="1 1 auto">
-                1 1 auto
-            </button>
-            <button aria-pressed="false" data-flex="1 0 150px">
-                1 0 150px
-            </button>
-            <button aria-pressed="false" data-flex="2 1 100px">
-                2 1 100px
-            </button>
-            <button aria-pressed="false" data-flex="0 0 200px">
-                0 0 200px
-            </button>
-            <button aria-pressed="false" data-flex="1">
-                flex: 1
-            </button>
-            <button aria-pressed="false" data-flex="auto">
-                auto
-            </button>
-            <button aria-pressed="false" data-flex="none">
-                none
-            </button>
-        </div>
-        <div class="container flex-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item item-flex">
-                3
-            </div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-        </div>
-        <div class="code">
-            <span>.item-3 { flex:</span>
-            <strong class="flex-value">
-                0 1 auto
-            </strong>
-
-            <span>; }</span>
-        </div>
-        <div class="flex-details">
-            <p>
-                flex-grow:
-                <strong class="flex-grow-value">0</strong>
+            <p class="demo-introduction">
+                Define a direção do eixo principal e a ordem em que os itens são apresentados.
             </p>
-            <p>
-                flex-shrink:
-                <strong class="flex-shrink-value">1</strong>
-            </p>
-            <p>
-                flex-basis:
-                <strong class="flex-basis-value">auto</strong>
-            </p>
-        </div>
-    </section>
 
-    <!-- ===================================================
-        align-self
-    =================================================== -->
-
-    <section class="demo" id="align-self">
-        <h2>align-self</h2>
-        <p>
-            Define o alinhamento de apenas um item no eixo secundário, substituindo
-            o valor de <strong>align-items</strong> definido no container.
-            Nesta demonstração, apenas o <strong>Item 3</strong> será alterado.
-        </p>
-        <div class="buttons">
-            <button class="active" aria-pressed="true" data-align-self="auto">
-                auto
-            </button>
-            <button aria-pressed="false" data-align-self="stretch">
-                stretch
-            </button>
-            <button aria-pressed="false" data-align-self="flex-start">
-                flex-start
-            </button>
-            <button aria-pressed="false" data-align-self="center">
-                center
-            </button>
-            <button aria-pressed="false" data-align-self="flex-end">
-                flex-end
-            </button>
-            <button aria-pressed="false" data-align-self="baseline">
-                baseline
-            </button>
-        </div>
-        <div class="container align-self-container">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item item-align-self">
-                3
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de flex-direction">
+                <button type="button" class="active" data-direction="row" aria-pressed="true">row</button>
+                <button type="button" data-direction="row-reverse" aria-pressed="false">row-reverse</button>
+                <button type="button" data-direction="column" aria-pressed="false">column</button>
+                <button type="button" data-direction="column-reverse" aria-pressed="false">column-reverse</button>
             </div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-        </div>
-        <div class="code">
-            <span>.item-3 { align-self:</span>
-            <strong class="align-self-value">
-                auto
-            </strong>
-            <span>; }</span>
-        </div>
-    </section>
 
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description direction-description" aria-live="polite">
+                Organiza os itens horizontalmente, da esquerda para a direita.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container direction-container" id="direction-container">
+                <span class="container-label">flex container</span>
+                <!-- Indicadores dos eixos; o JavaScript atualiza as setas nesta seção. -->
+                <span class="axis axis-main direction-main-axis">Eixo principal →</span>
+                <span class="axis axis-cross direction-cross-axis">Eixo secundário ↓</span>
+                <!-- Cada elemento .item é um Flex Item. Os números facilitam observar ordem e posição. -->
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display: flex;
+    flex-direction: <strong class="direction-value" aria-live="polite">row</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex-direction"
+                    data-copy-target=".direction-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: justify-content
+             Distribui os itens ao longo do eixo principal.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="justify-content">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type">Flex Container</span>
+                    <h2>justify-content</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="justify">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Distribui e posiciona os itens ao longo do eixo principal.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de justify-content">
+                <button type="button" class="active" data-justify="flex-start" aria-pressed="true">flex-start</button>
+                <button type="button" data-justify="center" aria-pressed="false">center</button>
+                <button type="button" data-justify="flex-end" aria-pressed="false">flex-end</button>
+                <button type="button" data-justify="space-between" aria-pressed="false">space-between</button>
+                <button type="button" data-justify="space-around" aria-pressed="false">space-around</button>
+                <button type="button" data-justify="space-evenly" aria-pressed="false">space-evenly</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description justify-description" aria-live="polite">
+                Posiciona todos os itens no início do eixo principal.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container justify-container">
+                <span class="container-label">flex container</span>
+                <span class="axis axis-main">Eixo principal →</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display: flex;
+    justify-content: <strong class="justify-value" aria-live="polite">flex-start</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="justify-content"
+                    data-copy-target=".justify-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: align-items
+             Alinha todos os itens no eixo secundário.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="align-items">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type">Flex Container</span>
+                    <h2>align-items</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="align">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Alinha todos os itens ao longo do eixo secundário.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de align-items">
+                <button type="button" class="active" data-align="stretch" aria-pressed="true">stretch</button>
+                <button type="button" data-align="flex-start" aria-pressed="false">flex-start</button>
+                <button type="button" data-align="center" aria-pressed="false">center</button>
+                <button type="button" data-align="flex-end" aria-pressed="false">flex-end</button>
+                <button type="button" data-align="baseline" aria-pressed="false">baseline</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description align-description" aria-live="polite">
+                Estica os itens no eixo secundário quando eles não possuem tamanho fixo nesse eixo.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container align-container">
+                <span class="container-label">flex container</span>
+                <span class="axis axis-cross">Eixo secundário ↓</span>
+                <div class="item"><span>1</span></div>
+                <div class="item baseline-large"><span>2</span></div>
+                <div class="item baseline-small"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display: flex;
+    align-items: <strong class="align-value" aria-live="polite">stretch</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="align-items"
+                    data-copy-target=".align-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: gap
+             Controla o espaço entre os itens sem usar margens.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="gap">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type">Flex Container</span>
+                    <h2>gap</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="gap">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Define o espaçamento entre os itens, sem criar margens nas extremidades do container.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de gap">
+                <button type="button" data-gap="0px" aria-pressed="false">0px</button>
+                <button type="button" class="active" data-gap="10px" aria-pressed="true">10px</button>
+                <button type="button" data-gap="20px" aria-pressed="false">20px</button>
+                <button type="button" data-gap="40px" aria-pressed="false">40px</button>
+                <button type="button" data-gap="60px" aria-pressed="false">60px</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description gap-description" aria-live="polite">
+                Cria 10 pixels de espaço entre linhas e colunas.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container gap-container">
+                <span class="container-label">flex container</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+                <div class="item"><span>6</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: <strong class="gap-value" aria-live="polite">10px</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="gap" data-copy-target=".gap-value">Copiar
+                    CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: flex-wrap
+             Define se os itens permanecem em uma linha ou quebram para novas linhas.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="flex-wrap">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type">Flex Container</span>
+                    <h2>flex-wrap</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="wrap">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Controla se os itens permanecem em uma única linha ou quebram para novas linhas.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de flex-wrap">
+                <button type="button" class="active" data-wrap="nowrap" aria-pressed="true">nowrap</button>
+                <button type="button" data-wrap="wrap" aria-pressed="false">wrap</button>
+                <button type="button" data-wrap="wrap-reverse" aria-pressed="false">wrap-reverse</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description wrap-description" aria-live="polite">
+                Mantém todos os itens na mesma linha, mesmo quando falta espaço.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container wrap-container">
+                <span class="container-label">flex container</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+                <div class="item"><span>6</span></div>
+                <div class="item"><span>7</span></div>
+                <div class="item"><span>8</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display: flex;
+    flex-wrap: <strong class="wrap-value" aria-live="polite">nowrap</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex-wrap"
+                    data-copy-target=".wrap-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: flex-flow
+             Combina flex-direction e flex-wrap em uma única propriedade.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="flex-flow">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type">Flex Container</span>
+                    <h2>flex-flow</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="flow">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                É a forma resumida de definir <strong>flex-direction</strong> e
+                <strong>flex-wrap</strong>.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de flex-flow">
+                <button type="button" class="active" data-flow="row nowrap" aria-pressed="true">row nowrap</button>
+                <button type="button" data-flow="row wrap" aria-pressed="false">row wrap</button>
+                <button type="button" data-flow="row wrap-reverse" aria-pressed="false">row wrap-reverse</button>
+                <button type="button" data-flow="row-reverse wrap" aria-pressed="false">row-reverse wrap</button>
+                <button type="button" data-flow="column nowrap" aria-pressed="false">column nowrap</button>
+                <button type="button" data-flow="column wrap" aria-pressed="false">column wrap</button>
+                <button type="button" data-flow="column wrap-reverse" aria-pressed="false">column wrap-reverse</button>
+                <button type="button" data-flow="column-reverse wrap" aria-pressed="false">column-reverse wrap</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description flow-description" aria-live="polite">
+                Organiza os itens em linha e impede a quebra para novas linhas.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container flow-container">
+                <span class="container-label">flex container</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+                <div class="item"><span>6</span></div>
+                <div class="item"><span>7</span></div>
+                <div class="item"><span>8</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display: flex;
+    flex-flow: <strong class="flow-value" aria-live="polite">row nowrap</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex-flow"
+                    data-copy-target=".flow-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: align-content
+             Distribui as linhas no eixo secundário quando existe quebra de linha.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="align-content">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type">Flex Container</span>
+                    <h2>align-content</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="alignContent">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Distribui as linhas de itens no eixo secundário. Só produz efeito quando há
+                quebra de linha e espaço livre.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de align-content">
+                <button type="button" class="active" data-align-content="stretch" aria-pressed="true">stretch</button>
+                <button type="button" data-align-content="flex-start" aria-pressed="false">flex-start</button>
+                <button type="button" data-align-content="center" aria-pressed="false">center</button>
+                <button type="button" data-align-content="flex-end" aria-pressed="false">flex-end</button>
+                <button type="button" data-align-content="space-between" aria-pressed="false">space-between</button>
+                <button type="button" data-align-content="space-around" aria-pressed="false">space-around</button>
+                <button type="button" data-align-content="space-evenly" aria-pressed="false">space-evenly</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description align-content-description" aria-live="polite">
+                Estica as linhas para preencher o espaço disponível no eixo secundário.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container align-content-container">
+                <span class="container-label">flex container com múltiplas linhas</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+                <div class="item"><span>6</span></div>
+                <div class="item"><span>7</span></div>
+                <div class="item"><span>8</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: <strong class="align-content-value" aria-live="polite">stretch</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="align-content"
+                    data-copy-target=".align-content-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             PARTE 2 — PROPRIEDADES DOS FLEX ITEMS
+             São aplicadas individualmente nos elementos filhos.
+        =================================================== -->
+        <header class="group-header">
+            <span>Parte 2</span>
+            <h2>Propriedades dos Flex Items</h2>
+            <p>Estas propriedades são aplicadas individualmente aos elementos internos.</p>
+        </header>
+
+        <!-- ===================================================
+             SEÇÃO: order
+             Altera a ordem visual de um item sem modificar o HTML.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="order">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type item-property">Flex Item</span>
+                    <h2>order</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="order">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Altera a ordem visual do Item 3 sem modificar a ordem dos elementos no HTML.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de order">
+                <button type="button" data-order="-1" aria-pressed="false">-1 — Primeiro</button>
+                <button type="button" class="active" data-order="0" aria-pressed="true">0 — Padrão</button>
+                <button type="button" data-order="1" aria-pressed="false">1 — Último</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description order-description" aria-live="polite">
+                Mantém o Item 3 na posição definida pelo HTML.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container order-container">
+                <span class="container-label">Item 3 selecionado</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <!-- Item 3 recebe classes extras para ser destacado e manipulado isoladamente. -->
+                <div class="item item-selected item-order"><span>3</span><small>selecionado</small></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.item-3 {
+    order: <strong class="order-value" aria-live="polite">0</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="order"
+                    data-copy-target=".order-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: flex-grow
+             Define quanto um item participa do crescimento no espaço livre.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="flex-grow">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type item-property">Flex Item</span>
+                    <h2>flex-grow</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="grow">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Distribui proporcionalmente o espaço livre. Os itens comuns possuem valor 1;
+                apenas o Item 3 será alterado.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de flex-grow">
+                <button type="button" data-grow="0" aria-pressed="false">0</button>
+                <button type="button" class="active" data-grow="1" aria-pressed="true">1 — Igual</button>
+                <button type="button" data-grow="2" aria-pressed="false">2 — Dobro</button>
+                <button type="button" data-grow="3" aria-pressed="false">3 — Triplo</button>
+                <button type="button" data-grow="5" aria-pressed="false">5</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description grow-description" aria-live="polite">
+                O Item 3 participa do crescimento na mesma proporção que os demais.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container grow-container">
+                <span class="container-label">Demais itens: flex-grow: 1</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item item-selected item-grow"><span>3</span><small>selecionado</small></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.item-3 {
+    flex-grow: <strong class="grow-value" aria-live="polite">1</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex-grow"
+                    data-copy-target=".grow-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: flex-shrink
+             Define quanto um item pode encolher quando falta espaço.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="flex-shrink">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type item-property">Flex Item</span>
+                    <h2>flex-shrink</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="shrink">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Define quanto o Item 3 pode encolher quando o espaço do container é insuficiente.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de flex-shrink">
+                <button type="button" data-shrink="0" aria-pressed="false">0 — Não encolhe</button>
+                <button type="button" class="active" data-shrink="1" aria-pressed="true">1 — Padrão</button>
+                <button type="button" data-shrink="2" aria-pressed="false">2</button>
+                <button type="button" data-shrink="3" aria-pressed="false">3</button>
+                <button type="button" data-shrink="5" aria-pressed="false">5</button>
+            </div>
+
+            <!-- Controle extra para reduzir a largura e tornar o flex-shrink mais visível. -->
+            <div class="size-controls">
+                <span>Largura do container:</span>
+                <div class="buttons compact-buttons" role="group" aria-label="Largura do container de flex-shrink">
+                    <button type="button" data-shrink-width="700px" aria-pressed="false">700px</button>
+                    <button type="button" data-shrink-width="600px" aria-pressed="false">600px</button>
+                    <button type="button" class="active" data-shrink-width="500px" aria-pressed="true">500px</button>
+                    <button type="button" data-shrink-width="400px" aria-pressed="false">400px</button>
+                </div>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description shrink-description" aria-live="polite">
+                O Item 3 encolhe na mesma proporção que os demais.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container shrink-container">
+                <span class="container-label">Reduza a largura para aumentar o efeito</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item item-selected item-shrink"><span>3</span><small>selecionado</small></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.item-3 {
+    flex-shrink: <strong class="shrink-value" aria-live="polite">1</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex-shrink"
+                    data-copy-target=".shrink-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: flex-basis
+             Define o tamanho inicial considerado pelo algoritmo Flexbox.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="flex-basis">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type item-property">Flex Item</span>
+                    <h2>flex-basis</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="basis">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Define o tamanho inicial do Item 3 antes do navegador distribuir ou retirar espaço.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de flex-basis">
+                <button type="button" data-basis="50px" aria-pressed="false">50px</button>
+                <button type="button" data-basis="100px" aria-pressed="false">100px</button>
+                <button type="button" data-basis="150px" aria-pressed="false">150px</button>
+                <button type="button" data-basis="200px" aria-pressed="false">200px</button>
+                <button type="button" data-basis="300px" aria-pressed="false">300px</button>
+                <button type="button" class="active" data-basis="auto" aria-pressed="true">auto</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description basis-description" aria-live="polite">
+                Usa o tamanho definido pela largura ou pelo conteúdo do item.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container basis-container">
+                <span class="container-label">Item 3 selecionado</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item item-selected item-basis"><span>3</span><small>selecionado</small></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.item-3 {
+    flex-basis: <strong class="basis-value" aria-live="polite">auto</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex-basis"
+                    data-copy-target=".basis-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: flex
+             Resume flex-grow, flex-shrink e flex-basis.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="flex">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type item-property">Flex Item</span>
+                    <h2>flex</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="flex">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Forma resumida de definir <strong>flex-grow</strong>,
+                <strong>flex-shrink</strong> e <strong>flex-basis</strong>.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores da propriedade flex">
+                <button type="button" class="active" data-flex="0 1 auto" aria-pressed="true">0 1 auto</button>
+                <button type="button" data-flex="1 1 auto" aria-pressed="false">1 1 auto</button>
+                <button type="button" data-flex="1 0 150px" aria-pressed="false">1 0 150px</button>
+                <button type="button" data-flex="2 1 100px" aria-pressed="false">2 1 100px</button>
+                <button type="button" data-flex="0 0 200px" aria-pressed="false">0 0 200px</button>
+                <button type="button" data-flex="1" aria-pressed="false">flex: 1</button>
+                <button type="button" data-flex="auto" aria-pressed="false">auto</button>
+                <button type="button" data-flex="none" aria-pressed="false">none</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description flex-description" aria-live="polite">
+                Não cresce, pode encolher e usa o tamanho automático como base.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container flex-container">
+                <span class="container-label">Item 3 selecionado</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item item-selected item-flex"><span>3</span><small>selecionado</small></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.item-3 {
+    flex: <strong class="flex-value" aria-live="polite">0 1 auto</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex"
+                    data-copy-target=".flex-value">Copiar CSS</button>
+            </div>
+
+            <!-- Exibe separadamente os valores calculados de grow, shrink e basis. -->
+            <div class="flex-details" aria-live="polite">
+                <p>flex-grow: <strong class="flex-grow-value">0</strong></p>
+                <p>flex-shrink: <strong class="flex-shrink-value">1</strong></p>
+                <p>flex-basis: <strong class="flex-basis-value">auto</strong></p>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             SEÇÃO: align-self
+             Altera o alinhamento de apenas um item no eixo secundário.
+             O id permite acessar esta seção pelo menu de navegação.
+        =================================================== -->
+        <section class="demo" id="align-self">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type item-property">Flex Item</span>
+                    <h2>align-self</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="alignSelf">Restaurar padrão</button>
+            </div>
+
+            <p class="demo-introduction">
+                Substitui o alinhamento definido pelo container apenas para o Item 3.
+            </p>
+
+            <!--
+                Grupo de botões com os valores da propriedade.
+                role="group" e aria-label ajudam leitores de tela.
+                data-* guarda o valor que será lido pelo JavaScript.
+                aria-pressed informa qual botão está ativo.
+            -->
+            <div class="buttons" role="group" aria-label="Valores de align-self">
+                <button type="button" class="active" data-align-self="auto" aria-pressed="true">auto</button>
+                <button type="button" data-align-self="stretch" aria-pressed="false">stretch</button>
+                <button type="button" data-align-self="flex-start" aria-pressed="false">flex-start</button>
+                <button type="button" data-align-self="center" aria-pressed="false">center</button>
+                <button type="button" data-align-self="flex-end" aria-pressed="false">flex-end</button>
+                <button type="button" data-align-self="baseline" aria-pressed="false">baseline</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description align-self-description" aria-live="polite">
+                Herda o align-items: center definido no container.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container align-self-container">
+                <span class="container-label">Container: align-items: center</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item item-selected item-align-self"><span>3</span><small>selecionado</small></div>
+                <div class="item"><span>4</span></div>
+                <div class="item"><span>5</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.item-3 {
+    align-self: <strong class="align-self-value" aria-live="polite">auto</strong>;
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="align-self"
+                    data-copy-target=".align-self-value">Copiar CSS</button>
+            </div>
+        </section>
+
+        <!-- ===================================================
+             PARTE 3 — DESAFIO PRÁTICO
+             Combina propriedades já estudadas em uma atividade final.
+        =================================================== -->
+        <header class="group-header" id="desafio">
+            <span>Parte 3</span>
+            <h2>Desafio prático</h2>
+            <p>Use três propriedades para centralizar os cards horizontal e verticalmente.</p>
+        </header>
+
+        <!-- Seção com os campos, a área visual e a verificação do desafio. -->
+        <section class="demo challenge-section">
+            <!-- Agrupa o título da propriedade e o botão que restaura o valor inicial. -->
+            <div class="demo-heading">
+                <div>
+                    <span class="property-type challenge-label">Desafio</span>
+                    <h2>Centralize os itens</h2>
+                </div>
+                <button type="button" class="reset-button" data-reset-section="challenge">Reiniciar desafio</button>
+            </div>
+
+            <p class="demo-introduction">
+                Configure o container com <strong>flex-direction: row</strong>,
+                <strong>justify-content: center</strong> e
+                <strong>align-items: center</strong>.
+            </p>
+
+            <!-- Cada select permite escolher um valor que será aplicado pelo JavaScript. -->
+            <div class="challenge-controls">
+                <!-- label associa o nome da propriedade ao campo de seleção. -->
+                <label>
+                    flex-direction
+                    <select class="challenge-direction">
+                        <option value="row">row</option>
+                        <option value="row-reverse">row-reverse</option>
+                        <option value="column">column</option>
+                        <option value="column-reverse">column-reverse</option>
+                    </select>
+                </label>
+
+                <label>
+                    justify-content
+                    <select class="challenge-justify">
+                        <option value="flex-start">flex-start</option>
+                        <option value="center">center</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="space-between">space-between</option>
+                    </select>
+                </label>
+
+                <label>
+                    align-items
+                    <select class="challenge-align">
+                        <option value="stretch">stretch</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="center">center</option>
+                        <option value="flex-end">flex-end</option>
+                    </select>
+                </label>
+            </div>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container challenge-container">
+                <span class="container-label">Área do desafio</span>
+                <div class="item"><span>1</span></div>
+                <div class="item"><span>2</span></div>
+                <div class="item"><span>3</span></div>
+            </div>
+
+            <!-- Área com o botão de verificação e a mensagem de resposta do desafio. -->
+            <div class="challenge-actions">
+                <button type="button" class="check-button">Verificar resposta</button>
+                <p class="challenge-feedback" aria-live="polite">
+                    Altere as propriedades e verifique sua resposta.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé com informação final e link de retorno ao topo. -->
+    <footer class="page-footer">
+        <p>Laboratório desenvolvido para estudo das propriedades do CSS Flexbox.</p>
+        <a href="#top" class="back-to-top">Voltar ao topo ↑</a>
+    </footer>
+
+    <!--
+        Conecta o JavaScript ao HTML.
+        Está no final do body para que os elementos já existam quando o script for executado.
+    -->
     <script src="js/script.js"></script>
-
 </body>
 
 </html>
