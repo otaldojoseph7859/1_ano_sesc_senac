@@ -41,7 +41,8 @@ body {
     padding: clamp(16px, 4vw, 48px);
     color: var(--text);
     background:
-        radial-gradient(circle at top left, rgba(99, 102, 241, 0.16), transparent 34rem),
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.16), 
+        transparent 34rem),
         var(--background);
     font-family: Inter, Arial, Helvetica, sans-serif;
     line-height: 1.5;
