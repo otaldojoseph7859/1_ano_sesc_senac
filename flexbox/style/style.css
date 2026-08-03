@@ -85,7 +85,7 @@ select:focus-visible {
 
 .page-label,
 .property-type,
-.group-header > span {
+.group-header span {
     display: inline-flex;
     align-items: center;
     width: fit-content;
