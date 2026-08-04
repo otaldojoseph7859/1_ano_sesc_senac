@@ -101,9 +101,48 @@
                 <button type="button" data-direction="column" aria-pressed="false">column</button>
                 <button type="button" data-direction="column-reverse" aria-pressed="false">column-reverse</button>
             </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite anunciar a mudança para leitores de tela.
+            -->
+            <p class="property-description direction-description" aria-live="polite">
+                Organiza os itens horizontalmente, da esquerda para a direita.
+            </p>
+
+            <!--
+                Área visual da demonstração.
+                A classe container recebe display:flex no CSS.
+                A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container direction-container" id="direction-container">
+                <span class="container-label">flex container</span>
+                <!-- Indicadores dos eixos; o JavaScript atualiza as setas nesta seção. -->
+                <span class="axis axis-main direction-main-axis">Eixo principal →</span>
+                <span class="axis axis-cross direction-cross-axis">Eixo secundário ↓</span>
+                <!-- Cada elemento .item é um flex Item. Os números facilitam observar ordem e posição. -->
+                <div><span class="item">1</span></div>
+                <div><span class="item">2</span></div>
+                <div><span class="item">3</span></div>
+                <div><span class="item">4</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspondente ao valor selecionado.
+                <pre> preserva espaços e quebras de linha; <code> identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display:flex;
+    flex-direction: <strong class="direction-value" aria-live="polite"></strong>;                    
+}</code></pre>
+                <button type="button" class="copy-button" data-copy-property="flex-direction"
+                    data-copy-target=".direction-value">Copiar CSS</button>
+            </div>
         </section>
 
     </main>
 
 </body>
-</html>
+</html>-->>
