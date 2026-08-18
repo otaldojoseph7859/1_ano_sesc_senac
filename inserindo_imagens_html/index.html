@@ -1,97 +1,196 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Meu primeiro site</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <h1>São José dos Pinhais</h1>
-        <img src="image/catedral_centro_sjp.png" alt="Catedral do centro de São José dos Pinhais - PR">
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Imagens em HTML e CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <h1>Trabalhando com Imagens em HTML e CSS</h1>
+    <p>
+        Nesta atividade aprenderemos como inserir imagens utilizando HTML
+        e como modificar sua aparência utilizando diferentes propriedades CSS.
+    </p>
+
+    <hr>
+
+    <h2>1. Inserindo uma imagem</h2>
+    <p>
+        Para inserir uma imagem em HTML utilizamos a tag <strong>&lt;img&gt;</strong>.
+    </p>
+    <img src="image/catedral_centro_sjp.png" alt="Catedral do centro de São José dos Pinhais - PR">
+    <p>
+        A propriedade <strong>src</strong> informa onde está o arquivo da imagem,
+        enquanto <strong>alt</strong> fornece uma descrição do conteúdo.
+    </p>
+
+    <hr>
+
+    <h2>2. Comparando formatos de imagem</h2>
+    <p>
+        Uma mesma imagem pode ser salva em diferentes formatos.
+        Mesmo mantendo a mesma resolução, o tamanho do arquivo pode mudar bastante.
+    </p>
+    <p>
+        Abaixo utilizamos a mesma imagem da academia, com resolução
+        <strong>1920x1080</strong>, salva em quatro formatos diferentes.
+    </p>
+
+    <h3>Formato AVIF</h3>
+    <img src="image/atividade/academia_senac.avif" alt="Academia ao ar livre em São José dos Pinhais - formato AVIF">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 192.74 KB
+    </p>
+
+    <h3>Formato JPG</h3>
+    <img src="image/atividade/academia_senac.jpg" alt="Academia ao ar livre em São José dos Pinhais - formato JPG">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 338.29 KB
+    </p>
+
+    <h3>Formato PNG</h3>
+    <img src="image/atividade/academia_senac.png" alt="Academia ao ar livre em São José dos Pinhais - formato PNG">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 866.47 KB
+    </p>
+
+    <h3>Formato WEBP</h3>
+    <img src="image/atividade/academia_senac.webp" alt="Academia ao ar livre em São José dos Pinhais - formato WEBP">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 247.56 KB
+    </p>
+    <p>
+        <strong>Observe:</strong>
+        todas as imagens possuem a mesma resolução, porém o tamanho dos arquivos
+        é diferente. Isso acontece porque cada formato utiliza características
+        e técnicas diferentes para armazenar e comprimir a imagem.
+    </p>
+    <p>
+        Quanto menor o arquivo, menor tende a ser a quantidade de dados
+        que o navegador precisa carregar. Por isso, escolher corretamente
+        o formato de imagem também pode ajudar no desempenho de um site.
+    </p>
+
+    <hr>
+
+    <h2>3. Alterando o tamanho da imagem</h2>
+    <p>
+        Podemos controlar o tamanho das imagens através da propriedade
+        <strong>width</strong>.
+    </p>
+
+    <h3>Imagem pequena</h3>
+    <img class="imagem-pequena" src="image/atividade/academia_senac.avif" alt="Academia ao ar livre em São José dos Pinhais">
     
-        <!-- academia do senac -->
-        <h1>Imagem aerea do sesc em formato .AVIF</h1>
-        <img src="image/atividade/academia_senac.avif" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista da academia ao ar livre do senac São José dos Pinhais - PR, com resolução 1920x1080, tamanho do arquivo 192.74KB.</p>
-
-        <h1>Imagem aerea do sesc em formato .JPG</h1>
-        <img src="image/atividade/academia_senac.jpg" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista da academia ao ar livre do senac São José dos Pinhais - PR, com resolução 1920x1080, tamanho do arquivo 338.29KB.</p>
-
-        <h1>Imagem aerea do sesc em formato .PNG</h1>
-        <img src="image/atividade/academia_senac.png" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista da academia ao ar livre do senac São José dos Pinhais - PR, com resolução 1920x1080, tamanho do arquivo 866.47KB.</p>
-
-        <h1>Imagem aerea do sesc em formato .WEBP</h1>
-        <img src="image/atividade/academia_senac.webp" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista da academia ao ar livre do senac São José dos Pinhais - PR, com resolução 1920x1080, tamanho do arquivo 247.56KB.</p>
-
-        <!-- aerea do sesc -->
-        <h1>Imagem aerea do sesc em formato .AVIF</h1>
-        <img src="image/atividade/aerea_sesc.avif" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do sesc São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.45KB.</p>
+    <h3>Imagem média</h3>
+    <img class="imagem-media" src="image/atividade/academia_senac.jpg" alt="Academia ao ar livre em São José dos Pinhais">
     
-        <h1>Imagem aerea do sesc em formato .JPG</h1>
-        <img src="image/atividade/aerea_sesc.jpg" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do sesc São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 200.42KB.</p>
+    <h3>Imagem grande</h3>
+    <img class="imagem-grande" src="image/atividade/academia_senac.webp" alt="Academia ao ar livre em São José dos Pinhais">
 
-        <h1>Imagem aerea do sesc em formato .PNG</h1>
-        <img src="image/atividade/aerea_sesc.png" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do sesc São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 457.7KB.</p>
+    <hr>
 
-        <h1>Imagem aerea do sesc em formato .WEBP</h1>
-        <img src="image/atividade/aerea_sesc.webp" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do sesc São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 109.05KB.</p>
+    <h2>4. Trabalhando com bordas</h2>
 
-        <!-- construção senac -->
-        <h1>Imagem aerea do sesc em formato .AVIF</h1>
-        <img src="image/atividade/construcao_senac.avif" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea da construção do sesc São José dos Pinhais - PR, com resolução 800x600, tamanho do arquivo 52.55KB.</p>
+    <p>
+        O CSS permite adicionar diferentes tipos de borda às imagens.
+    </p>
 
-        <h1>Imagem aerea do sesc em formato .JPG</h1>
-        <img src="image/atividade/construcao_senac.jpg" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea da construção do sesc São José dos Pinhais - PR, com resolução 800x600, tamanho do arquivo 87.51KB.</p>
+    <h3>Borda simples</h3>
+    <img class="borda-simples" src="image/atividade/aerea_sesc.jpg" alt="Vista aérea do SESC de São José dos Pinhais">
 
-        <h1>Imagem aerea do sesc em formato .PNG</h1>
-        <img src="image/atividade/construcao_senac.png" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea da construção do sesc São José dos Pinhais - PR, com resolução 800x600, tamanho do arquivo 263.04KB.</p>
+    <h3>Borda arredondada</h3>
+    <img class="borda-arredondada" src="image/atividade/aerea_sesc.webp" alt="Vista aérea do SESC de São José dos Pinhais">
 
-        <h1>Imagem aerea do sesc em formato .WEBP</h1>
-        <img src="image/atividade/construcao_senac.webp" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea da construção do sesc São José dos Pinhais - PR, com resolução 800x600, tamanho do arquivo 60.68KB.</p>
+    <h3>Imagem circular</h3>
+    <img class="imagem-circular" src="image/atividade/aerea_sesc.png" alt="Vista aérea do SESC de São José dos Pinhais">
 
-        <!-- estacionamento senac -->
-        <h1>Imagem aerea do sesc em formato .AVIF</h1>
-        <img src="image/atividade/estacionamento_senac.avif" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do estacionamento do senac São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
+    <hr>
 
-        <h1>Imagem aerea do sesc em formato .JPG</h1>
-        <img src="image/atividade/estacionamento_senac.jpg" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do estacionamento do senac São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
+    <h2>5. Espaçamento e sombra</h2>
+    <p>
+        Podemos utilizar <strong>padding</strong> para criar um espaço interno
+        e <strong>box-shadow</strong> para adicionar uma sombra.
+    </p>
 
-        <h1>Imagem aerea do sesc em formato .PNG</h1>
-        <img src="image/atividade/estacionamento_senac.png" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do estacionamento do senac São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
+    <h3>Imagem com espaçamento</h3>
+    <img class="imagem-com-padding" src="image/atividade/construcao_senac.jpg" alt="Construção em São José dos Pinhais">
 
-        <h1>Imagem aerea do sesc em formato .WEBP</h1>
-        <img src="image/atividade/estacionamento_senac.webp" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem de vista aerea do estacionamento do senac São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
+    <h3>Imagem com sombra</h3>
+    <img class="imagem-com-sombra" src="image/atividade/construcao_senac.webp" alt="Construção em São José dos Pinhais">
 
-        <!-- fachada do senac -->
-        <h1>Imagem aerea do sesc em formato .AVIF</h1>
-        <img src="image/atividade/fachada_senac.avif" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem da fachada do senac de São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
+    <hr>
 
-        <h1>Imagem aerea do sesc em formato .JPG</h1>
-        <img src="image/atividade/fachada_senac.jpg" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem da fachada do senac de São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
+    <h2>6. Opacidade e filtros</h2>
+    <p>
+        Também podemos modificar visualmente uma imagem utilizando
+        propriedades como <strong>opacity</strong> e <strong>filter</strong>.
+    </p>
 
-        <h1>Imagem aerea do sesc em formato .PNG</h1>
-        <img src="image/atividade/fachada_senac.png" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem da fachada do senac de São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
+    <h3>Imagem com transparência</h3>
+    <img class="imagem-transparente" src="image/atividade/estacionamento_senac.jpg" alt="Estacionamento em São José dos Pinhais">
 
-        <h1>Imagem aerea do sesc em formato .WEBP</h1>
-        <img src="image/atividade/fachada_senac.webp" alt="Imagem de vista aerea do sesc São José dos Pinhais - PR">
-        <p>Imagem da fachada do senac de São José dos Pinhais - PR, com resolução 1280x720, tamanho do arquivo 98.4KB.</p>
-    </body>
+    <h3>Imagem em escala de cinza</h3>
+    <img class="imagem-cinza" src="image/atividade/estacionamento_senac.png" alt="Estacionamento em São José dos Pinhais">
+
+    <h3>Imagem com brilho</h3>
+    <img class="imagem-brilho" src="image/atividade/estacionamento_senac.webp" alt="Estacionamento em São José dos Pinhais">
+
+    <hr>
+
+    <h2>7. Trabalhando com object-fit</h2>
+    <p>
+        A propriedade <strong>object-fit</strong> controla como a imagem
+        será ajustada quando definimos largura e altura.
+    </p>
+    <img class="imagem-cortada" src="image/atividade/fachada_senac.jpg" alt="Fachada do Senac de São José dos Pinhais">
+
+    <hr>
+
+    <h2>8. Combinando diferentes propriedades</h2>
+    <p>
+        Também podemos combinar várias propriedades para criar
+        uma apresentação mais completa.
+    </p>
+    <img class="imagem-destaque" src="image/atividade/fachada_senac.webp" alt="Fachada do Senac de São José dos Pinhais">
+
+    <hr>
+
+    <h2>Comparando formatos de imagem</h2>
+    <p>
+        Durante esta atividade também utilizaremos arquivos nos formatos
+        AVIF, JPG, PNG e WEBP.
+    </p>
+    <p>
+        Mesmo quando possuem a mesma resolução, os arquivos podem apresentar
+        tamanhos diferentes.
+    </p>
+    <p>
+        Essa comparação permite entender que a escolha do formato também
+        influencia o desempenho de um site.
+    </p>
+
+    <hr>
+
+    <h2>Desafio</h2>
+    <p><strong>1 - </strong> Escolha um dos grupos de imagens disponíveis na pasta "atividade".</p>
+    <p><strong>2 - </strong> Identifique a resolução de cada arquivo.</p>
+    <p><strong>3 - </strong> Compare os tamanhos de AVIF, JPG, PNG e WEBP.</p>
+    <p><strong>4 - </strong> Descubra qual formato possui o menor arquivo.</p>
+    <p><strong>5 - </strong> Descubra qual possui o maior arquivo.</p>
+    <p><strong>6 - </strong> Calcule aproximadamente quanto maior é o maior arquivo em relação ao menor.</p>
+    <p><strong>7 - </strong> Explique qual formato você escolheria para utilizar em um site e por quê.</p>
+
+</body>
+
 </html>

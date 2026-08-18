@@ -1,0 +1,341 @@
+/*
+    CONFIGURAÇÕES GERAIS DA PÁGINA
+
+    body:
+    - Representa todo o conteúdo visível da página.
+    width:
+    - Define a largura ocupada pelo elemento.
+    margin: auto:
+    - Distribui automaticamente as margens laterais, centralizando o conteúdo.
+    text-align:
+    - Define o alinhamento do conteúdo textual.
+    font-family:
+    - Define as fontes utilizadas na página.
+    color:
+    - Define a cor padrão dos textos.
+    background-color:
+    - Define a cor de fundo da página.
+*/
+
+body {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+
+/*
+    TÍTULO PRINCIPAL
+
+    h1: 
+    - Seleciona todos os elementos <h1>.
+    color: 
+    - Define a cor do texto.
+*/
+
+h1 {
+    color: #9700d2;
+}
+
+
+/*
+    TÍTULOS DE SEGUNDO NÍVEL
+
+    margin-top:
+    - Cria um espaço acima do elemento.
+    - Esse espaço ajuda a separar visualmente cada parte da atividade.
+*/
+
+h2 {
+    color: #5c007a;
+    margin-top: 40px;
+}
+
+
+/*
+    SUBTÍTULOS
+
+    Os elementos <h3> identificam exemplos dentro de cada conteúdo.
+*/
+
+h3 {
+    color: #333;
+    margin-top: 30px;
+}
+
+
+/*
+    PARÁGRAFOS
+
+    line-height:
+    - Define a distância vertical entre as linhas do texto.
+    - Um valor maior facilita a leitura.
+*/
+
+p {
+    line-height: 1.6;
+}
+
+
+/*
+    LINHA DE SEPARAÇÃO
+
+    hr:
+    - Seleciona os elementos <hr>.
+    margin:
+    - Adiciona espaço antes e depois da linha.
+    border:
+    - Remove a borda padrão.
+    border-top:
+    - Cria apenas uma linha na parte superior.
+*/
+
+hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 2px solid #ddd;
+}
+
+
+/*
+    CONFIGURAÇÃO PADRÃO DAS IMAGENS
+
+    img:
+    - Seleciona todas as imagens da página.
+    width:
+    - Define uma largura padrão.
+    max-width:
+    - Impede que a imagem ultrapasse a largura disponível na página.
+    height: auto:
+    - Faz a altura ser calculada automaticamente, preservando a proporção original da imagem.
+*/
+
+img {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==================================================
+   EXEMPLO 1 - TAMANHOS
+   ==================================================
+
+   Estas classes demonstram como a propriedade width altera a largura da imagem.
+   A altura permanece automática.
+*/
+
+
+.imagem-pequena {
+    width: 300px;
+}
+
+
+.imagem-media {
+    width: 500px;
+}
+
+
+.imagem-grande {
+    width: 700px;
+}
+
+
+/* ==================================================
+   EXEMPLO 2 - BORDAS
+   ==================================================
+
+   border possui três informações principais:
+
+   - espessura
+   - estilo
+   - cor
+
+   Exemplo:
+
+   border: 3px solid #9700d2;
+
+   - 3px       = espessura
+   - solid     = tipo da borda
+   - #9700d2   = cor
+*/
+
+
+.borda-simples {
+    border: 3px solid #9700d2;
+}
+
+
+/*
+    border-radius:
+    - Arredonda os cantos de um elemento.
+    - Quanto maior o valor, maior será o arredondamento.
+*/
+
+.borda-arredondada {
+    border: 3px solid #9700d2;
+    border-radius: 20px;
+}
+
+
+/*
+    IMAGEM CIRCULAR
+
+    Definimos largura e altura iguais.
+    
+    Depois utilizamos:
+    
+    border-radius: 50%;
+    - Isso transforma visualmente o elemento em um círculo.
+
+    object-fit: cover:
+    - Faz a imagem preencher todo o espaço sem ser deformada.
+*/
+
+.imagem-circular {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* ==================================================
+   EXEMPLO 3 - PADDING
+   ==================================================
+
+   padding:
+   - Cria espaço entre a imagem e sua borda.
+   background-color:
+   - Permite visualizar melhor esse espaço.
+*/
+
+.imagem-com-padding {
+    padding: 15px;
+    border: 3px solid #9700d2;
+    background-color: white;
+}
+
+
+/* ==================================================
+   EXEMPLO 4 - SOMBRA
+   ==================================================
+
+   box-shadow:
+   - Cria uma sombra ao redor de um elemento.
+
+   Neste exemplo:
+
+   - 0       = deslocamento horizontal
+   - 8px     = deslocamento vertical
+   - 20px    = nível de desfoque
+   - rgba()  = cor com transparência
+*/
+
+.imagem-com-sombra {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==================================================
+   EXEMPLO 5 - OPACIDADE
+   ==================================================
+
+   opacity:
+   - Controla a transparência do elemento.
+
+   O valor pode variar entre:
+
+   - 0 = completamente transparente
+   - 1 = completamente visível
+   - 0.5 representa aproximadamente 50% de opacidade.
+*/
+
+.imagem-transparente {
+    opacity: 0.5;
+}
+
+
+/* ==================================================
+   EXEMPLO 6 - FILTROS
+   ==================================================
+
+   filter:
+   - Permite aplicar efeitos visuais diretamente através do CSS.
+*/
+
+
+/*
+    grayscale(100%):
+    - Remove completamente as cores, deixando a imagem em escala de cinza.
+*/
+
+.imagem-cinza {
+    filter: grayscale(100%);
+}
+
+
+/*
+    blur():
+    - Aplica desfoque.
+    - Quanto maior o valor em pixels, maior será o efeito.
+*/
+
+.imagem-desfocada {
+    filter: blur(3px);
+}
+
+
+/*
+    brightness():
+
+    - Controla o brilho.
+    - 100% representa o brilho original.
+    - Valores maiores aumentam o brilho.
+    - Valores menores diminuem o brilho.
+*/
+
+.imagem-brilho {
+    filter: brightness(130%);
+}
+
+
+/* ==================================================
+   EXEMPLO 7 - OBJECT-FIT
+   ==================================================
+
+   Quando definimos largura e altura diferentes da proporção original, a imagem poderia ficar deformada.
+
+   object-fit: cover:
+
+   - Mantém a proporção e preenche todo o espaço disponível.
+   - Partes da imagem podem ser cortadas.
+*/
+
+.imagem-cortada {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+/* ==================================================
+   EXEMPLO 8 - COMBINAÇÃO DE ESTILOS
+   ==================================================
+
+   - Nesta classe reunimos propriedades estudadas separadamente.
+   - Isso demonstra que uma classe CSS pode controlar diferentes características do mesmo elemento ao mesmo tempo.
+*/
+
+.imagem-destaque {
+    width: 600px;
+    border: 4px solid #9700d2;
+    border-radius: 20px;
+    padding: 8px;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}

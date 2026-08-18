@@ -1,0 +1,472 @@
+    <!--
+        9. DESAFIO FINAL
+
+        O objetivo desta parte é estimular autonomia.
+
+        O aluno deverá escolher uma imagem e criar
+        sua própria classe CSS.
+
+        A ideia é utilizar pelo menos quatro propriedades
+        apresentadas durante a atividade.
+
+        Não existe apenas uma resposta correta.
+
+        O importante é conseguir explicar:
+
+        - quais propriedades foram utilizadas;
+        - quais valores foram escolhidos;
+        - qual resultado visual era esperado.
+    -->
+
+    <h2>9. Desafio final</h2>
+
+    <p>
+        Escolha uma das imagens disponíveis na pasta
+        <strong>image/atividade</strong> e crie sua própria classe CSS.
+    </p>
+
+    <p>
+        Utilize pelo menos quatro propriedades estudadas
+        durante esta atividade.
+    </p>
+
+</body>
+
+</html>
+
+.
+.
+.
+.
+.
+.
+.
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <!--
+        CONFIGURAÇÕES INICIAIS DO DOCUMENTO
+
+        <!DOCTYPE html>: Informa ao navegador que o documento utiliza HTML5.
+        <html lang="pt-br">: Define o elemento principal do documento e informa que o idioma utilizado é português do Brasil.
+        <meta charset="UTF-8">: Permite utilizar corretamente acentos, cedilha e outros caracteres especiais.
+        <meta name="viewport">: Ajuda a página a se adaptar corretamente em diferentes tamanhos de tela.
+        <title>: Define o texto apresentado na aba do navegador.
+        <link>: Conecta o arquivo HTML ao arquivo CSS externo.
+        rel="stylesheet": Informa que o arquivo conectado contém estilos CSS.
+        href: Informa o caminho onde está localizado o arquivo CSS.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Imagens em HTML e CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!--
+        TÍTULO PRINCIPAL DA ATIVIDADE
+
+        <h1>: Representa o título mais importante da página.
+        <p>: Representa um parágrafo de texto.
+        
+        Nesta introdução apresentamos o objetivo da atividade:
+        Aprender a inserir imagens utilizando HTML e modificar
+        sua apresentação utilizando CSS.
+    -->
+    <h1>Trabalhando com Imagens em HTML e CSS</h1>
+    <p>
+        Nesta atividade aprenderemos como inserir imagens utilizando HTML
+        e como modificar sua aparência utilizando diferentes propriedades CSS.
+    </p>
+
+    <hr>
+
+    <!--
+        1. INSERINDO UMA IMAGEM
+
+        <h2>: Representa um título de segundo nível.
+        <strong>: Destaca uma informação importante.
+        <img>: 
+        - Insere uma imagem na página. 
+        - A tag <img> não possui uma tag de fechamento.
+        - src: Informa o caminho onde o arquivo da imagem está localizado.
+        - alt: Fornece uma descrição textual da imagem.
+
+        O atributo alt é importante principalmente para:
+        - acessibilidade;
+        - leitores de tela;
+        - situações em que a imagem não pode ser carregada.
+    -->
+    <h2>1. Inserindo uma imagem</h2>
+    <p>
+        Para inserir uma imagem em HTML utilizamos a tag <strong>&lt;img&gt;</strong>.
+    </p>
+    <img src="image/catedral_centro_sjp.png" alt="Catedral do centro de São José dos Pinhais - PR">
+    <p>
+        A propriedade <strong>src</strong> informa onde está o arquivo da imagem,
+        enquanto <strong>alt</strong> fornece uma descrição do conteúdo.
+    </p>
+
+    <hr>
+
+    <!--
+        2. COMPARANDO FORMATOS DE IMAGEM
+
+        Nesta etapa utilizamos exatamente a mesma fotografia salva em formatos diferentes.
+        Todas possuem resolução 1920x1080.
+        
+        Isso permite demonstrar um conceito importante:
+        RESOLUÇÃO não é a mesma coisa que TAMANHO DO ARQUIVO.
+
+        Os formatos utilizados são:
+
+        - AVIF
+        - JPG
+        - PNG
+        - WEBP
+
+        Cada formato utiliza técnicas diferentes para armazenar e comprimir as informações da imagem.
+        Por isso, duas imagens visualmente semelhantes e com a mesma resolução podem possuir tamanhos de arquivo bastante diferentes.
+        Essa diferença influencia o tempo necessário para carregar uma página.
+    -->
+    <h2>2. Comparando formatos de imagem</h2>
+    <p>
+        Uma mesma imagem pode ser salva em diferentes formatos.
+        Mesmo mantendo a mesma resolução, o tamanho do arquivo pode mudar bastante.
+    </p>
+    <p>
+        Abaixo utilizamos a mesma imagem da academia, com resolução
+        <strong>1920x1080</strong>, salva em quatro formatos diferentes.
+    </p>
+
+    <!--
+        FORMATO AVIF
+
+        - AVIF é um formato moderno de imagem que normalmente consegue produzir arquivos menores mantendo boa qualidade.
+
+        Nesta imagem:
+        Resolução: 1920x1080
+        Tamanho: 192.74 KB
+    -->
+    <h3>Formato AVIF</h3>
+    <img src="image/atividade/academia_senac.avif" alt="Academia ao ar livre em São José dos Pinhais - formato AVIF">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 192.74 KB
+    </p>
+
+    <!--
+        FORMATO JPG
+
+        - JPG é um dos formatos de imagem mais conhecidos e utilizados na internet.
+        - Ele utiliza compressão com perda de informação, permitindo reduzir o tamanho dos arquivos.
+
+        Nesta imagem:
+        Resolução: 1920x1080
+        Tamanho: 338.29 KB
+    -->
+    <h3>Formato JPG</h3>
+    <img src="image/atividade/academia_senac.jpg" alt="Academia ao ar livre em São José dos Pinhais - formato JPG">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 338.29 KB
+    </p>
+
+    <!--
+        FORMATO PNG
+
+        - PNG utiliza normalmente compressão sem perda de qualidade.
+        - Ele também permite trabalhar com transparência.
+        - Dependendo do conteúdo da imagem, o arquivo pode ficar consideravelmente maior.
+
+        Nesta imagem:
+        Resolução: 1920x1080
+        Tamanho: 866.47 KB
+    -->
+    <h3>Formato PNG</h3>
+    <img src="image/atividade/academia_senac.png" alt="Academia ao ar livre em São José dos Pinhais - formato PNG">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 866.47 KB
+    </p>
+
+    <!--
+        FORMATO WEBP
+
+        - WEBP é um formato criado para utilização na web.
+        - Ele consegue oferecer boa qualidade utilizando arquivos relativamente pequenos.
+
+        Nesta imagem:
+        Resolução: 1920x1080
+        Tamanho: 247.56 KB
+    -->
+    <h3>Formato WEBP</h3>
+    <img src="image/atividade/academia_senac.webp" alt="Academia ao ar livre em São José dos Pinhais - formato WEBP">
+    <p>
+        Resolução: 1920x1080 <br>
+        Tamanho do arquivo: 247.56 KB
+    </p>
+
+    <!--
+        CONCLUSÃO DA COMPARAÇÃO
+
+        As quatro imagens possuem a mesma resolução.
+        Porém:
+
+        AVIF = 192.74 KB
+        WEBP = 247.56 KB
+        JPG  = 338.29 KB
+        PNG  = 866.47 KB
+
+        - Esse exemplo demonstra que o formato escolhido pode influenciar diretamente o peso da página.
+        - Quanto menor o arquivo, menor tende a ser a quantidade de dados que o navegador precisa baixar.
+    -->
+    <p>
+        <strong>Observe:</strong>
+        todas as imagens possuem a mesma resolução, porém o tamanho dos arquivos
+        é diferente. Isso acontece porque cada formato utiliza características
+        e técnicas diferentes para armazenar e comprimir a imagem.
+    </p>
+    <p>
+        Quanto menor o arquivo, menor tende a ser a quantidade de dados
+        que o navegador precisa carregar. Por isso, escolher corretamente
+        o formato de imagem também pode ajudar no desempenho de um site.
+    </p>
+
+    <hr>
+
+    <!--
+        3. ALTERANDO O TAMANHO DAS IMAGENS
+
+        - Nesta parte começamos a trabalhar com CSS.
+        - As imagens recebem diferentes classes.
+
+        class:
+        - Permite identificar um ou mais elementos para que possamos aplicar estilos específicos utilizando CSS.
+
+        No CSS teremos:
+        .imagem-pequena
+        .imagem-media
+        .imagem-grande
+
+        A propriedade principal utilizada será:
+
+        width:
+        - Define a largura do elemento
+    -->
+    <h2>3. Alterando o tamanho da imagem</h2>
+    <p>
+        Podemos controlar o tamanho das imagens através da propriedade
+        <strong>width</strong>.
+    </p>
+
+    <h3>Imagem pequena</h3>
+    <img class="imagem-pequena" src="image/atividade/academia_senac.avif" alt="Academia ao ar livre em São José dos Pinhais">
+    
+    <h3>Imagem média</h3>
+    <img class="imagem-media" src="image/atividade/academia_senac.jpg" alt="Academia ao ar livre em São José dos Pinhais">
+    
+    <h3>Imagem grande</h3>
+    <img class="imagem-grande" src="image/atividade/academia_senac.webp" alt="Academia ao ar livre em São José dos Pinhais">
+
+    <hr>
+
+    <!--
+        4. TRABALHANDO COM BORDAS
+
+        Nesta seção utilizamos:
+
+        border:
+        - Cria uma borda ao redor da imagem
+        
+        border-radius:
+        - Arredonda os cantos do elemento
+
+        Quando usamos border-radius: 50% em uma imagem
+        com largura e altura iguais, conseguimos criar
+        uma aparência circular.
+
+        object-fit:
+        - Controla como a imagem será ajustada dentro das dimensões definidas
+    -->
+    <h2>4. Trabalhando com bordas</h2>
+
+    <p>
+        O CSS permite adicionar diferentes tipos de borda às imagens.
+    </p>
+
+    <h3>Borda simples</h3>
+    <img class="borda-simples" src="image/atividade/aerea_sesc.jpg" alt="Vista aérea do SESC de São José dos Pinhais">
+
+    <h3>Borda arredondada</h3>
+    <img class="borda-arredondada" src="image/atividade/aerea_sesc.webp" alt="Vista aérea do SESC de São José dos Pinhais">
+
+    <h3>Imagem circular</h3>
+    <img class="imagem-circular" src="image/atividade/aerea_sesc.png" alt="Vista aérea do SESC de São José dos Pinhais">
+
+    <hr>
+
+    <!--
+        5. ESPAÇAMENTO E SOMBRA
+
+        padding:
+        - Cria um espaço interno entre o conteúd e a borda do elemento
+        
+        background-color:
+        - Define uma cor de fundo
+        
+        box-shadow:
+        - Adiciona uma sombra ao redor do elemento
+
+        Essas propriedades permitem criar maior destaque visual para uma imagem.
+    -->
+    <h2>5. Espaçamento e sombra</h2>
+    <p>
+        Podemos utilizar <strong>padding</strong> para criar um espaço interno
+        e <strong>box-shadow</strong> para adicionar uma sombra.
+    </p>
+
+    <h3>Imagem com espaçamento</h3>
+    <img class="imagem-com-padding" src="image/atividade/construcao_senac.jpg" alt="Construção em São José dos Pinhais">
+
+    <h3>Imagem com sombra</h3>
+    <img class="imagem-com-sombra" src="image/atividade/construcao_senac.webp" alt="Construção em São José dos Pinhais">
+
+    <hr>
+
+    <!--
+        6. OPACIDADE E FILTROS
+
+        opacity:
+        - Controla o nível de transparência de um elemento.
+        - Valores próximos de 0 tornam o elemento mais transparente.
+        - Valores próximos de 1 tornam o elemento mais visível.
+
+        filter:
+        - Permite aplicar diferentes efeitos visuais.
+
+        Alguns exemplos utilizados:
+
+        grayscale():
+        - Remove as cores da imagem
+
+        brightness():
+        - Altera o brilho da imagem
+
+        blur():
+        - Permite aplicar desfoque
+    -->
+    <h2>6. Opacidade e filtros</h2>
+    <p>
+        Também podemos modificar visualmente uma imagem utilizando
+        propriedades como <strong>opacity</strong> e <strong>filter</strong>.
+    </p>
+
+    <h3>Imagem com transparência</h3>
+    <img class="imagem-transparente" src="image/atividade/estacionamento_senac.jpg" alt="Estacionamento em São José dos Pinhais">
+
+    <h3>Imagem em escala de cinza</h3>
+    <img class="imagem-cinza" src="image/atividade/estacionamento_senac.png" alt="Estacionamento em São José dos Pinhais">
+
+    <h3>Imagem com brilho</h3>
+    <img class="imagem-brilho" src="image/atividade/estacionamento_senac.webp" alt="Estacionamento em São José dos Pinhais">
+
+    <hr>
+
+    <!--
+        7. OBJECT-FIT
+
+        width:
+        - Define a largura da imagem.
+
+        height:
+        - Define a altura.
+
+        object-fit: cover:
+        - Faz a imagem preencher completamente o espaço definido.
+        - Caso seja necessário, partes da imagem podem ser cortadas para preservar sua proporção.
+        - Essa propriedade é muito utilizada quando queremos padronizar imagens que possuem dimensões diferentes.
+    -->
+    <h2>7. Trabalhando com object-fit</h2>
+    <p>
+        A propriedade <strong>object-fit</strong> controla como a imagem
+        será ajustada quando definimos largura e altura.
+    </p>
+    <img class="imagem-cortada" src="image/atividade/fachada_senac.jpg" alt="Fachada do Senac de São José dos Pinhais">
+
+    <hr>
+
+    <!--
+        8. COMBINANDO PROPRIEDADES
+
+        Até este momento vimos propriedades separadamente.
+
+        Nesta etapa combinamos algumas delas em uma única classe:
+
+        - width
+        - border
+        - border-radius
+        - padding
+        - background-color
+        - box-shadow
+
+        Isso demonstra que uma classe CSS pode possuir várias propriedades trabalhando juntas.
+    -->
+    <h2>8. Combinando diferentes propriedades</h2>
+    <p>
+        Também podemos combinar várias propriedades para criar
+        uma apresentação mais completa.
+    </p>
+    <img class="imagem-destaque" src="image/atividade/fachada_senac.webp" alt="Fachada do Senac de São José dos Pinhais">
+
+    <hr>
+
+    <h2>Comparando formatos de imagem</h2>
+    <p>
+        Durante esta atividade também utilizaremos arquivos nos formatos
+        AVIF, JPG, PNG e WEBP.
+    </p>
+    <p>
+        Mesmo quando possuem a mesma resolução, os arquivos podem apresentar
+        tamanhos diferentes.
+    </p>
+    <p>
+        Essa comparação permite entender que a escolha do formato também
+        influencia o desempenho de um site.
+    </p>
+
+    <hr>
+
+    <!--
+        9. DESAFIO FINAL
+
+        - O objetivo desta parte é estimular autonomia.
+        - O aluno deverá escolher uma imagem e criar sua própria classe CSS.
+        - A ideia é utilizar pelo menos quatro propriedades apresentadas durante a atividade.
+        - Não existe apenas uma resposta correta.
+
+        O importante é conseguir explicar:
+
+        - quais propriedades foram utilizadas;
+        - quais valores foram escolhidos;
+        - qual resultado visual era esperado.
+    -->
+    <h2>9. Desafio final</h2>
+    <p><strong>1 - </strong> Escolha um dos grupos de imagens disponíveis na pasta "atividade".</p>
+    <p><strong>2 - </strong> Identifique a resolução de cada arquivo.</p>
+    <p><strong>3 - </strong> Compare os tamanhos de AVIF, JPG, PNG e WEBP.</p>
+    <p><strong>4 - </strong> Descubra qual formato possui o menor arquivo.</p>
+    <p><strong>5 - </strong> Descubra qual possui o maior arquivo.</p>
+    <p><strong>6 - </strong> Calcule aproximadamente quanto maior é o maior arquivo em relação ao menor.</p>
+    <p><strong>7 - </strong> Explique qual formato você escolheria para utilizar em um site e por quê.</p>
+
+</body>
+
+</html>
