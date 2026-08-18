@@ -199,4 +199,110 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    /*
+        Função responsável por restaurar uma demonstração
+        para o seu estado inicial.
+
+        Ela recebe as informações da seção que será restaurada,
+        como o elemento que será alterado, a propriedade CSS
+        utilizada e qual é o seu valor padrão.
+
+        Quando executada, a função:
+
+        1. localiza os elementos necessários;
+        2. restaura a propriedade CSS para o valor padrão;
+        3. atualiza o valor mostrado no painel de código;
+        4. restaura a descrição da propriedade;
+        5. destaca novamente o botão correspondente ao valor padrão;
+        6. executa uma ação adicional, caso seja necessário.
+
+        Dessa forma, podemos utilizar a mesma função para restaurar
+        diferentes demonstrações do laboratório.
+    */
+    function resetController({
+        buttonSelector,
+        targetSelector,
+        outputSelector,
+        descriptionSelector,
+        datasetKey,
+        styleProperty,
+        defaultValue,
+        descriptionGroup,
+        afterReset
+    }) {
+        const target = getElement(targetSelector);
+        const output = getElement(outputSelector);
+        const description = getElement(descriptionSelector);
+
+        if(!target || !output || !description) {
+            return;
+        }
+
+        target.style[styleProperty] = defaultValue;
+        output.textContent = defaultValue;
+        description.textContent = descriptions[descriptionGroup][defaultValue] ?? "";
+        setActiveByValue(buttonSelector, datasetKey, defaultValue);
+
+        if (typeof afterReset === "function") {
+            afterReset(defaultValue);
+        }
+    }
+
+    /*
+        Função responsável por atualizar visualmente os indicadores
+        dos eixos da demonstração de flex-direction.
+
+        No Flexbox temos:
+
+        - eixo principal;
+        - eixo secundário.
+
+        A direção desses eixos depende do valor utilizado em
+        flex-direction.
+
+        Por exemplo:
+
+        row            -> eixo principal →
+        row-reverse    -> eixo principal ←
+        column         -> eixo principal ↓
+        column-reverse -> eixo principal ↑
+
+        Esta função identifica qual direção está sendo utilizada
+        e modifica os textos e as setas mostrados na tela.
+    */
+
+    function updateDirectionAxes(value) {
+        const mainAxis = getElement(".direction-main-axis");
+        const crossAxis = getElement(".direction-cross-axis");
+
+        if (!mainAxis || !crossAxis) {
+            return;
+        }
+
+        const isColumn = value.includes("column");
+        const isReverse = value.includes("reverse");
+
+        mainAxis.textContent = isColumn
+            ? `Eixo principal ${isReverse ? "↑" : "↓"}`
+            : `Eixo principal ${isReverse ? "←" : "→"}`;
+        
+        crossAxis.textContent = isColumn
+        ? `Eixo secundário →`
+        : `Eixo principal ↓`;
+
+        mainAxis.classList.toggle("vertical-axis-label", isColumn);
+        crossAxis.classList.toggle("horizontal-axis-label", isColumn);
+    }
+
+    createController({
+        buttonSelector: "[data-direction]",
+        targetSelector: ".direction-container",
+        outputSelector: ".direction-value",
+        descriptionSelector: ".direction-description",
+        datasetKey: "direction",
+        styleProperty: "flexDirection",
+        descriptionGroup: "direction",
+        afterChange: updateDirectionAxes
+    });
 })
