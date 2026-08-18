@@ -1,66 +1,521 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!--
+        CONFIGURAÇÕES DO DOCUMENTO
+
+        <head>:
+        Armazena informações e configurações da página que não aparecem
+        diretamente no conteúdo exibido pelo navegador.
+
+        <meta charset="UTF-8">:
+        Define a codificação de caracteres utilizada na página.
+        O UTF-8 permite exibir corretamente acentos, cedilha e outros caracteres.
+
+        <meta name="viewport">:
+        Ajuda o navegador a adaptar corretamente a página para diferentes
+        tamanhos de tela, principalmente celulares e tablets.
+
+        <title>:
+        Define o título exibido na aba do navegador.
+    -->
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Currículo - Chrystopher Ferreira</title>
 </head>
+
 <body>
-    <!-- <ul> define uma lista não ordenada -->
-    <ul>
-        <li>[Cidade, Estado]</li> <!-- <li> informa o conteúdo da lista -->
-        <li>[Rua e Cep]</li>
-        <li>[telefone]</li>
-        <li>[Email]</li>
-    </ul>
-    <h1>[Seu nome]</h1>
+
+    <!--
+        IDENTIFICAÇÃO PRINCIPAL
+
+        Esta parte apresenta o nome e uma breve identificação profissional.
+
+        <h1>:
+        Representa o título principal da página.
+        Normalmente deve ser utilizado para o conteúdo de maior importância.
+
+        <p>:
+        Representa um parágrafo.
+
+        <strong>:
+        Indica que determinado conteúdo possui forte importância.
+        O navegador normalmente apresenta esse conteúdo em negrito.
+    -->
+
+    <h1>Chrystopher Ferreira</h1>
+
+    <p>
+        <strong>Estudante de Tecnologia | Desenvolvedor Web em Formação</strong>
+    </p>
+
+
+    <!--
+        INFORMAÇÕES DE CONTATO
+
+        Nesta parte são apresentados localização, telefone, e-mail e GitHub.
+
+        <p>:
+        Agrupa as informações dentro de um parágrafo.
+
+        <br>:
+        Cria uma quebra de linha sem iniciar um novo parágrafo.
+
+        <a>:
+        Cria um link.
+
+        href:
+        Define para onde o link será direcionado.
+
+        mailto:
+        Permite criar um link que abre o aplicativo de e-mail do usuário.
+
+        target="_blank":
+        Faz com que o link seja aberto em uma nova aba do navegador.
+    -->
+
+    <p>
+        Curitiba - Paraná <br>
+
+        Telefone: (41) 99999-9999 <br>
+
+        E-mail:
+        <a href="mailto:chrystopher@email.com">
+            chrystopher@email.com
+        </a>
+        <br>
+
+        GitHub:
+        <a href="https://github.com/" target="_blank">
+            github.com/chrystopher
+        </a>
+    </p>
+
+
+    <!--
+        SEPARAÇÃO ENTRE CONTEÚDOS
+
+        <hr>:
+        Representa uma separação temática entre conteúdos.
+
+        O navegador normalmente apresenta uma linha horizontal.
+    -->
+
     <hr>
 
-    <h2>OBJETIVO:</h2>
-    <p>Trabalhar em uma empresa conceituada, Libero egestas aliquam amet, purus donec aliquet fringilla, aenean sagittis.</p>
+
+    <!--
+        OBJETIVO PROFISSIONAL
+
+        Esta seção apresenta o objetivo profissional do currículo.
+
+        <h2>:
+        Representa um título de segundo nível.
+        É utilizado para organizar os principais tópicos da página.
+
+        <p>:
+        Representa o texto do objetivo profissional.
+
+        <strong>:
+        Destaca uma informação importante dentro do texto.
+    -->
+
+    <h2>Objetivo Profissional</h2>
+
+    <p>
+        Busco minha primeira oportunidade profissional na área de
+        <strong>Tecnologia da Informação</strong>, onde possa desenvolver
+        meus conhecimentos em programação e contribuir com a equipe,
+        enquanto continuo evoluindo profissionalmente.
+    </p>
+
     <hr>
+
+
+    <!--
+        SOBRE MIM
+
+        Esta seção apresenta uma breve descrição pessoal.
+
+        <h2>:
+        Cria o título principal da seção.
+
+        <p>:
+        Organiza as informações em parágrafos.
+
+        <abbr>:
+        Representa uma abreviação ou sigla.
+
+        title:
+        Informa o significado completo da abreviação.
+        Normalmente aparece ao posicionar o mouse sobre o texto.
+
+        <mark>:
+        Destaca visualmente um trecho relevante do conteúdo.
+    -->
+
+    <h2>Sobre Mim</h2>
+
+    <p>
+        Sou estudante e tenho grande interesse por tecnologia,
+        desenvolvimento web e resolução de problemas.
+    </p>
+
+    <p>
+        Atualmente estou estudando
+        <abbr title="HyperText Markup Language">HTML</abbr>,
+        <abbr title="Cascading Style Sheets">CSS</abbr>
+        e JavaScript.
+    </p>
+
+    <p>
+        Meu objetivo é me tornar um
+        <mark>desenvolvedor web</mark>
+        e participar da criação de projetos que resolvam problemas reais.
+    </p>
+
+    <hr>
+
+
+    <!--
+        HABILIDADES E COMPETÊNCIAS
+
+        Nesta seção utilizamos uma lista de descrição.
+
+        <dl>:
+        Cria uma lista formada por termos e suas descrições.
+
+        <dt>:
+        Representa o termo que será explicado.
+
+        <dd>:
+        Representa a descrição relacionada ao termo anterior.
+
+        <strong>:
+        Destaca o nome de cada competência.
+    -->
+
+    <h2>Habilidades e Competências</h2>
 
     <dl>
+
         <dt>
-            <h3>HABILIDADES & COMPETÊNCIAS</h3>
+            <strong>Resolução de problemas</strong>
         </dt>
-        <dd>Flexibilidade - Aliquet sodales volutpat interdum aliquam nibh, elit gravida tincidunt rutrum.</dd>
-        <dd>Capacidade para resolver problemas - Adipiscing ornare nec eleifend potenti sem, molestie eget class nisi.</dd>
-        <dd>Trabalho em equipe - Ut lacus ut imperdiet in gravida, justo auctor ut adipiscing.</dd>
-        <dd>Esforçado - Nam sociosqu conubia donec taciti platea, condimentum sem augue gravida.</dd>
-        <dd>Proativo - Tempor per augue facilisis ornare fringilla, donec nec volutpat ornare.</dd>
-        <dd>Altamente qualificado - Mollis imperdiet eget eu feugiat suscipit, suspendisse semper inceptos metus.</dd>
-        <dd>Comunicativo - Scelerisque ut dictum curae vehicula mi, faucibus consectetur tristique erat.</dd>
+
+        <dd>
+            Procuro analisar cada desafio e encontrar diferentes
+            alternativas para solucioná-lo.
+        </dd>
+
+        <dt>
+            <strong>Trabalho em equipe</strong>
+        </dt>
+
+        <dd>
+            Tenho facilidade para colaborar, compartilhar ideias
+            e ouvir diferentes opiniões.
+        </dd>
+
+        <dt>
+            <strong>Comunicação</strong>
+        </dt>
+
+        <dd>
+            Busco transmitir minhas ideias de forma simples,
+            clara e respeitosa.
+        </dd>
+
+        <dt>
+            <strong>Aprendizado contínuo</strong>
+        </dt>
+
+        <dd>
+            Tenho curiosidade e interesse em aprender novas
+            tecnologias e desenvolver novas habilidades.
+        </dd>
+
     </dl>
+
     <hr>
 
-    <h3>EXPERIÊNCIA</h3>
+
+    <!--
+        CONHECIMENTOS TÉCNICOS
+
+        Nesta seção utilizamos uma lista não ordenada.
+
+        <ul>:
+        Cria uma lista em que a ordem dos itens não representa
+        necessariamente uma sequência.
+
+        <li>:
+        Representa cada item da lista.
+
+        <code>:
+        Indica um pequeno trecho relacionado a código ou comandos
+        de programação.
+    -->
+
+    <h2>Conhecimentos Técnicos</h2>
+
     <ul>
-        <li>[CARGO, NOME DA EMPRESA] [Datas De - Até]</li>
-        <li>[CARGO, NOME DA EMPRESA] [Datas De - Até]</li>
-        <li>[CARGO, NOME DA EMPRESA] [Datas De - Até]</li>
-        <li>[CARGO, NOME DA EMPRESA] [Datas De - Até]</li>
+        <li>HTML básico</li>
+        <li>CSS básico</li>
+        <li>Lógica de programação</li>
+        <li>Git e GitHub</li>
+        <li>Informática</li>
     </ul>
+
+    <p>
+        Atualmente estou aprendendo o comando
+        <code>git commit</code>
+        para registrar alterações em meus projetos.
+    </p>
+
     <hr>
 
-    <h3>EDUCAÇÃO</h3>
+
+    <!--
+        EXPERIÊNCIA
+
+        Esta seção apresenta uma experiência ou projeto realizado.
+
+        <h2>:
+        Representa o título da seção.
+
+        <h3>:
+        Representa um subtítulo dentro da seção.
+
+        <p>:
+        Apresenta informações complementares.
+
+        <strong>:
+        Destaca a natureza da experiência.
+
+        <em>:
+        Dá ênfase a uma informação.
+        O navegador normalmente apresenta o conteúdo em itálico.
+
+        <ul> e <li>:
+        Organizam as atividades realizadas em uma lista.
+    -->
+
+    <h2>Experiência</h2>
+
+    <h3>Projeto de Desenvolvimento Web</h3>
+
+    <p>
+        <strong>Projeto acadêmico</strong> |
+        <em>2026</em>
+    </p>
+
     <ul>
-        <li>[NOME DA INSTITUIÇÃO—LOCAL—GRADUAÇÃO]</li>
-        <li>[NOME DA INSTITUIÇÃO—LOCAL—GRADUAÇÃO]</li>
-        <li>[NOME DA INSTITUIÇÃO—LOCAL—GRADUAÇÃO]</li>
+        <li>Criação de páginas utilizando HTML.</li>
+        <li>Organização de arquivos e pastas do projeto.</li>
+        <li>Utilização do Git para controle de versão.</li>
+        <li>Publicação dos projetos no GitHub.</li>
     </ul>
+
     <hr>
 
-    <h3>COMUNICAÇÃO</h3>
-    <p>Ante nec libero facilisis aliquam ultrices fringilla inceptos, tempus tristique sollicitudin nostra consequat cubilia, convallis libero varius sapien nisi lorem.</p>
-    <hr>
 
-    <h3>REFERÊNCIAS</h3>
+    <!--
+        FORMAÇÃO ACADÊMICA
+
+        Esta seção demonstra a hierarquia de títulos dentro do HTML.
+
+        <h2>:
+        Título principal da seção.
+
+        <h3>:
+        Subtítulo que representa a formação.
+
+        <p>:
+        Contém instituição e período.
+
+        <br>:
+        Separa as informações em linhas.
+
+        <h4>:
+        Representa um nível abaixo de <h3>.
+
+        <ol>:
+        Cria uma lista ordenada.
+
+        <li>:
+        Representa cada item da lista.
+    -->
+
+    <h2>Formação Acadêmica</h2>
+
+    <h3>Ensino Médio Técnico em Informática para Internet</h3>
+
+    <p>
+        Instituição de Ensino <br>
+        2026 - 2028
+    </p>
+
+    <h4>Principais áreas estudadas</h4>
+
     <ol>
-        <li>[NOME DE REFERÊNCIA, Cargo, Empresa, contato]</li>
-        <li>[NOME DE REFERÊNCIA, Cargo, Empresa, contato]</li>
-        <li>[NOME DE REFERÊNCIA, Cargo, Empresa, contato]</li>
-        <li>[NOME DE REFERÊNCIA, Cargo, Empresa, contato]</li>
+        <li>Desenvolvimento Web</li>
+        <li>Lógica de Programação</li>
+        <li>Banco de Dados</li>
+        <li>Versionamento de Código</li>
     </ol>
+
+    <hr>
+
+
+    <!--
+        CURSOS E CERTIFICAÇÕES
+
+        <h2>:
+        Representa o título da seção.
+
+        <ul>:
+        Cria uma lista não ordenada.
+
+        <li>:
+        Representa cada curso.
+
+        <small>:
+        Representa uma informação complementar ou observação.
+        Os navegadores geralmente exibem esse texto em tamanho menor.
+    -->
+
+    <h2>Cursos e Certificações</h2>
+
+    <ul>
+        <li>Introdução ao HTML - 20h</li>
+        <li>Lógica de Programação - 40h</li>
+        <li>Git e GitHub - 10h</li>
+    </ul>
+
+    <p>
+        <small>
+            As cargas horárias apresentadas são exemplos utilizados
+            exclusivamente nesta atividade.
+        </small>
+    </p>
+
+    <hr>
+
+
+    <!--
+        IDIOMAS
+
+        Nesta seção utilizamos novamente uma lista não ordenada.
+
+        <ul>:
+        Agrupa os idiomas.
+
+        <li>:
+        Representa cada idioma.
+
+        <sup>:
+        Cria um conteúdo sobrescrito.
+        Pode ser utilizado em expoentes, referências ou nomenclaturas.
+    -->
+
+    <h2>Idiomas</h2>
+
+    <ul>
+        <li>Português - Nativo</li>
+        <li>Inglês - Básico</li>
+    </ul>
+
+    <p>
+        Meta pessoal: alcançar o nível B<sup>2</sup> de inglês.
+    </p>
+
+    <hr>
+
+
+    <!--
+        INTERESSES E CITAÇÕES
+
+        Esta seção apresenta dois tipos diferentes de citação.
+
+        <p>:
+        Apresenta textos comuns.
+
+        <blockquote>:
+        Representa uma citação em bloco, normalmente utilizada
+        para conteúdos maiores ou destacados.
+
+        <q>:
+        Representa uma citação curta dentro de um texto.
+    -->
+
+    <h2>Interesses</h2>
+
+    <p>
+        Tecnologia, programação, jogos, desenvolvimento de sistemas
+        e aprendizado de novas ferramentas.
+    </p>
+
+    <blockquote>
+        "Sempre podemos aprender algo novo quando estamos dispostos
+        a tentar."
+    </blockquote>
+
+    <p>
+        Uma frase que representa minha forma de pensar é:
+        <q>aprender fazendo</q>.
+    </p>
+
+    <hr>
+
+
+    <!--
+        REFERÊNCIAS
+
+        Nesta seção utilizamos uma lista ordenada.
+
+        <ol>:
+        Cria uma lista numerada.
+
+        <li>:
+        Representa cada referência apresentada.
+    -->
+
+    <h2>Referências</h2>
+
+    <ol>
+        <li>
+            Maria Souza - Professora - contato@email.com
+        </li>
+
+        <li>
+            Pedro Oliveira - Coordenador - contato@email.com
+        </li>
+    </ol>
+
+    <hr>
+
+
+    <!--
+        INFORMAÇÃO FINAL
+
+        <p>:
+        Cria o último parágrafo da página.
+
+        <small>:
+        Indica que o conteúdo é uma informação complementar.
+    -->
+
+    <p>
+        <small>
+            Currículo desenvolvido como atividade prática de HTML.
+        </small>
+    </p>
+
 </body>
+
 </html>
