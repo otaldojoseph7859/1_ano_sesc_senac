@@ -1,6 +1,23 @@
-/* ===========================================
-   Configurações gerais
-=========================================== */
+/* ==========================================================
+   CONFIGURAÇÕES GERAIS
+
+   Esta parte prepara o projeto para receber os estilos da página.
+
+   Aqui definimos:
+   - variáveis reutilizáveis
+   - reset de estilos padrão
+   - comportamento global
+   - acessibilidade de foco
+========================================================== */
+
+/* ==========================================================
+   VARIÁVEIS CSS
+
+   O seletor :root representa o nível mais alto do documento.
+
+   Criamos variáveis para centralizar cores, sombras e tamanhos.
+   Isso evita repetição e facilita futuras alterações no tema.
+========================================================== */
 
 :root {
     color-scheme: dark;
@@ -25,25 +42,54 @@
     --shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
 }
 
+/* ==========================================================
+   RESET CSS
+
+   Remove margens e espaçamentos padrões aplicados pelos
+   navegadores.
+
+   box-sizing: border-box faz com que width e height incluam
+   padding e border no cálculo do tamanho final.
+========================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ==========================================================
+   COMPORTAMENTO DE ROLAGEM
+
+   scroll-behavior cria uma navegação suave ao clicar nos links.
+
+   scroll-padding-top evita que o título de uma seção fique
+   escondido atrás do menu fixo.
+========================================================== */
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
 
+/* ==========================================================
+   ESTILOS GERAIS DO BODY
+
+   O body recebe o visual geral da página.
+
+   clamp() cria medidas responsivas com valor mínimo, ideal
+   e máximo.
+
+   radial-gradient cria o brilho no canto superior esquerdo.
+========================================================== */
+
 body {
     min-height: 100vh;
     padding: clamp(16px, 4vw, 48px);
     color: var(--text);
-    background: 
-        radial-gradient(circle at top left, 
-            rgba(99, 102, 241, 0.16), 
-            transparent 34rem),
+    background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.16), 
+        transparent 34rem),
         var(--background);
     font-family: Inter, Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -60,6 +106,13 @@ select {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* ==========================================================
+   ACESSIBILIDADE DO FOCO
+
+   :focus-visible exibe um contorno quando o usuário navega
+   pelo teclado, por exemplo utilizando a tecla TAB.
+========================================================== */
+
 button:focus-visible,
 a:focus-visible,
 select:focus-visible {
@@ -67,25 +120,38 @@ select:focus-visible {
     outline-offset: 3px;
 }
 
-/* ===========================================
-   Cabeçalho e navegação
-=========================================== */
+/* ==========================================================
+   CABEÇALHO E NAVEGAÇÃO
+========================================================== */
+
+/* ==========================================================
+   CABEÇALHO PRINCIPAL
+
+   Cria o card de apresentação do laboratório.
+
+   O linear-gradient é combinado com a cor da superfície para
+   gerar profundidade visual.
+========================================================== */
 
 .page-header {
     max-width: 1200px;
     margin: 0 auto 28px;
     padding: clamp(28px, 6vw, 72px);
     text-align: center;
-    background: 
-        linear-gradient(
-            135deg, rgba(99, 102, 241, 0.28), 
-            rgba(14, 165, 233, 0.12)
-        ),
+    background:
+        linear-gradient(135deg, rgba(99, 102, 241, 0.28), rgba(14, 165, 233, 0.12)),
         var(--surface);
     border: 1px solid rgba(129, 140, 248, 0.35);
     border-radius: 24px;
     box-shadow: var(--shadow);
 }
+
+/* ==========================================================
+   RÓTULOS PEQUENOS
+
+   Estes seletores compartilham o mesmo estilo para evitar
+   repetição de código.
+========================================================== */
 
 .page-label,
 .property-type,
@@ -115,8 +181,18 @@ select:focus-visible {
     max-width: 760px;
     margin: 20px auto 0;
     color: var(--text-muted);
-    font-size: clamp(1rem, 2vw, 1.15rem); /*      1.15rem*/
+    font-size: clamp(1rem, 2vw, 1.15rem);
 }
+
+/* ==========================================================
+   MENU DE NAVEGAÇÃO
+
+   position: sticky mantém o menu visível durante a rolagem.
+
+   overflow-x: auto permite rolagem horizontal em telas menores.
+
+   backdrop-filter cria o efeito de vidro fosco.
+========================================================== */
 
 .property-navigation {
     position: sticky;
@@ -136,6 +212,12 @@ select:focus-visible {
     backdrop-filter: blur(14px);
 }
 
+/*
+   flex: 0 0 auto impede que os links diminuam.
+
+   Em telas pequenas, o menu passa a rolar horizontalmente.
+*/
+
 .property-navigation a {
     flex: 0 0 auto;
     padding: 8px 12px;
@@ -154,14 +236,23 @@ select:focus-visible {
     border-color: var(--primary-hover);
 }
 
-/* ===========================================
-   Grupos e seções
-=========================================== */
+/* ==========================================================
+   GRUPOS E SEÇÕES
+========================================================== */
 
 main {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* ==========================================================
+   CABEÇALHO DOS GRUPOS
+
+   Separa visualmente:
+   - propriedades do Flex Container
+   - propriedades dos Flex Items
+   - desafio final
+========================================================== */
 
 .group-header {
     margin: 64px 0 22px;
@@ -257,7 +348,7 @@ main {
     color: #e0f2fe;
     background-color: rgba(14, 165, 233, 0.09);
     border-left: 4px solid var(--accent);
-    border-radius: 0 var(--radius-small) var(--radius-small);
+    border-radius: 0 var(--radius-small) var(--radius-small) 0;
 }
 
 /* ==========================================================
@@ -396,7 +487,7 @@ button.active {
     gap: 10px;
     padding: 46px 20px 20px;
     overflow: auto;
-    background: 
+    background:
         linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
         var(--surface-highlight);
@@ -495,16 +586,16 @@ button.active {
 /* Destaca visualmente o item manipulado na demonstração. */
 
 .item-selected {
-    background: 
+    background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.18), transparent 50%),
         var(--item-selected);
     border-color: #fdba74;
 }
 
 /* ==========================================================
-    INDICADORES DE EIXO
+   INDICADORES DE EIXO
 
-    Mostram o eixo principal e o eixo secundário do flexbox.
+   Mostram o eixo principal e o eixo secundário do Flexbox.
 ========================================================== */
 
 .axis {
@@ -523,9 +614,9 @@ button.active {
     bottom: 8px;
 }
 
-/* 
-    writing-mode altera a direção da escrita para apresentar 
-    o rótulo verticalmente.
+/*
+   writing-mode altera a direção da escrita para apresentar
+   o rótulo verticalmente.
 */
 
 .axis-cross {
@@ -535,15 +626,15 @@ button.active {
 }
 
 /* ==========================================================
-    PAINEL DE CÓDIGO
+   PAINEL DE CÓDIGO
 ========================================================== */
 
 /* ==========================================================
-    ESTRUTURA DO PAINEL
+   ESTRUTURA DO PAINEL
 
-    CSS grid cria duas colunas: 
-    - código ocupando o espaço disponível
-    - botão de copiar com largura automática
+   CSS Grid cria duas colunas:
+   - código ocupando o espaço disponível
+   - botão de copiar com largura automática
 ========================================================== */
 
 .code-wrapper {
@@ -555,12 +646,12 @@ button.active {
 }
 
 /* ==========================================================
-    BLOCO DE CÓDIGO
+   BLOCO DE CÓDIGO
 
-    Usa fonte monoespaçada para melhorar a leitura.
+   Usa fonte monoespaçada para melhorar a leitura.
 
-    overflow-x: auto adiciona rolagem quando o conteúdo não 
-    cabe em telas pequenas.
+   overflow-x: auto adiciona rolagem quando o conteúdo não
+   cabe em telas pequenas.
 ========================================================== */
 
 .code {
@@ -602,3 +693,475 @@ button.active {
    As classes abaixo alteram apenas o necessário para tornar
    cada propriedade visível e didática.
 ========================================================== */
+
+/* Altura maior para visualizar row, column e valores reversos. */
+
+.direction-container {
+    min-height: 420px;
+}
+
+/* Valor inicial da demonstração de justify-content. */
+
+.justify-container {
+    justify-content: flex-start;
+}
+
+/* ==========================================================
+   align-items
+
+   stretch é o valor inicial.
+
+   Os itens recebem height: auto porque stretch não consegue
+   aumentar um elemento que já possui altura fixa.
+========================================================== */
+
+.align-container {
+    min-height: 390px;
+    align-items: stretch;
+}
+
+.align-container .item {
+    height: auto;
+    min-height: 90px;
+}
+
+/*
+   Tamanhos diferentes permitem demonstrar baseline,
+   alinhando os textos por sua linha de base.
+*/
+
+.align-container .baseline-large {
+    font-size: 3rem;
+}
+
+.align-container .baseline-small {
+    font-size: 1rem;
+}
+
+/* ==========================================================
+   gap
+
+   A largura limitada e o flex-wrap permitem visualizar
+   espaçamentos horizontais e verticais.
+========================================================== */
+
+.gap-container {
+    width: 520px;
+    max-width: 100%;
+    min-height: 430px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px;
+}
+
+/* ==========================================================
+   flex-wrap
+
+   A largura reduzida força falta de espaço.
+
+   nowrap é o valor inicial para demonstrar a ausência de quebra.
+========================================================== */
+
+.wrap-container {
+    width: 550px;
+    max-width: 100%;
+    min-height: 430px;
+    flex-wrap: nowrap;
+}
+
+/*
+   flex-shrink: 0 impede que os itens diminuam automaticamente.
+
+   Sem essa regra, o navegador poderia esconder o efeito
+   de nowrap reduzindo os cards.
+*/
+
+.wrap-container .item,
+.flow-container .item {
+    flex-shrink: 0;
+}
+
+/* ==========================================================
+   flex-flow
+
+   A largura e a altura controladas permitem demonstrar
+   combinações entre direção e quebra.
+========================================================== */
+
+.flow-container {
+    width: 650px;
+    max-width: 100%;
+    height: 520px;
+    flex-flow: row nowrap;
+}
+
+/* ==========================================================
+   align-content
+
+   Essa propriedade atua sobre múltiplas linhas.
+
+   Por isso:
+   - flex-wrap precisa estar ativo
+   - o container precisa ter altura disponível
+   - os itens não podem encolher
+========================================================== */
+
+.align-content-container {
+    width: 550px;
+    max-width: 100%;
+    height: 600px;
+    flex-wrap: wrap;
+    align-content: stretch;
+    gap: 10px;
+}
+
+.align-content-container .item {
+    width: 120px;
+    height: auto;
+    min-height: 90px;
+    flex-shrink: 0;
+}
+
+.order-container .item-order {
+    order: 0;
+}
+
+.order-container .item-order-2 {
+    order: 1;
+}
+
+/* ==========================================================
+   flex-grow
+
+   Todos os itens iniciam com flex-grow: 1.
+
+   flex-basis: 0 faz a divisão considerar principalmente
+   as proporções de crescimento.
+========================================================== */
+
+.grow-container .item {
+    min-width: 0;
+    width: auto;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.grow-container .item-grow {
+    flex-grow: 1;
+}
+
+/* ==========================================================
+   flex-shrink
+
+   O container começa estreito para provocar falta de espaço
+   e ativar o algoritmo de encolhimento.
+========================================================== */
+
+.shrink-container {
+    width: 500px;
+    max-width: 100%;
+    min-height: 310px;
+}
+
+/*
+   min-width: 0 permite que o item fique menor do que seu
+   tamanho inicial quando o Flexbox precisar encolhê-lo.
+*/
+
+.shrink-container .item {
+    width: 140px;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+/* ==========================================================
+   flex-basis
+
+   O crescimento é desativado para destacar o tamanho inicial
+   definido por flex-basis.
+========================================================== */
+
+.basis-container .item {
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.basis-container .item-basis {
+    flex-basis: auto;
+}
+
+.flex-container .item {
+    flex: 0 1 auto;
+}
+
+/* ==========================================================
+   DETALHES DA PROPRIEDADE flex
+
+   Exibe separadamente:
+   - flex-grow
+   - flex-shrink
+   - flex-basis
+========================================================== */
+
+.flex-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 14px;
+    padding: 16px;
+    background-color: #09090b;
+    border: 1px solid var(--surface-highlight);
+    border-radius: 10px;
+}
+
+.flex-details p {
+    margin: 0;
+    padding: 8px 12px;
+    background-color: var(--surface-soft);
+    border-radius: 7px;
+}
+
+.flex-details strong {
+    color: var(--success);
+}
+
+/* ==========================================================
+   align-self
+
+   O container usa align-items: center.
+
+   O Item 3 poderá substituir esse valor individualmente.
+========================================================== */
+
+.align-self-container {
+    min-height: 400px;
+    align-items: center;
+}
+
+.align-self-container .item-align-self {
+    height: auto;
+    min-height: 120px;
+    align-self: auto;
+}
+
+/* ==========================================================
+   DESAFIO
+========================================================== */
+
+/* ==========================================================
+   CONTROLES DO DESAFIO
+
+   CSS Grid cria três colunas iguais.
+
+   minmax(0, 1fr) evita que o conteúdo ultrapasse a coluna.
+========================================================== */
+
+.challenge-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.challenge-controls label {
+    display: grid;
+    gap: 8px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.challenge-controls select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    color: white;
+    background-color: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+}
+
+/* Estado inicial propositalmente incorreto para o desafio. */
+
+.challenge-container {
+    min-height: 400px;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.challenge-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.check-button {
+    background-color: var(--success);
+    color: #052e16;
+}
+
+.challenge-feedback {
+    margin: 0;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+/*
+   Estas classes são adicionadas pelo JavaScript de acordo
+   com o resultado do desafio.
+*/
+
+.challenge-feedback.success {
+    color: #86efac;
+}
+
+.challenge-feedback.error {
+    color: #fca5a5;
+}
+
+/* ==========================================================
+   RODAPÉ
+========================================================== */
+
+/* Flexbox separa o texto e o link "Voltar ao topo". */
+
+.page-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    max-width: 1200px;
+    margin: 48px auto 0;
+    padding: 24px;
+    color: var(--text-muted);
+    background-color: var(--surface);
+    border: 1px solid var(--surface-highlight);
+    border-radius: var(--radius-large);
+}
+
+.back-to-top {
+    color: #c7d2fe;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+
+   Media queries aplicam regras quando determinadas condições
+   de largura ou preferência do usuário são atendidas.
+========================================================== */
+
+/* ==========================================================
+   TABLETS E CELULARES MAIORES
+
+   Em telas com até 760px:
+   - elementos em linha passam para coluna
+   - botões importantes ocupam toda a largura
+   - o desafio passa a ter uma coluna
+   - os itens ficam menores
+========================================================== */
+
+@media (max-width: 760px) {
+    .demo-heading,
+    .page-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .reset-button {
+        width: 100%;
+    }
+
+    .code-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .copy-button {
+        width: 100%;
+    }
+
+    .challenge-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        min-height: 330px;
+        padding-inline: 14px;
+    }
+
+    .item {
+        width: 100px;
+        height: 100px;
+    }
+
+    .size-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .compact-buttons button {
+        flex: 1 1 110px;
+    }
+}
+
+/* ==========================================================
+   CELULARES PEQUENOS
+
+   Em telas com até 480px:
+   - reduzimos espaçamentos
+   - aumentamos a largura dos botões
+   - diminuímos os cards
+========================================================== */
+
+@media (max-width: 480px) {
+    body {
+        padding-inline: 10px;
+    }
+
+    .page-header,
+    .demo {
+        border-radius: 14px;
+    }
+
+    .buttons button {
+        flex: 1 1 130px;
+    }
+
+    .item {
+        width: 86px;
+        height: 86px;
+        font-size: 1.55rem;
+    }
+
+    .property-navigation {
+        top: 6px;
+    }
+}
+
+/* ==========================================================
+   ACESSIBILIDADE - MOVIMENTO REDUZIDO
+
+   Alguns usuários preferem interfaces sem animações.
+
+   Esta media query detecta essa preferência no sistema e
+   praticamente remove transições e animações.
+
+   !important é usado porque esta regra precisa ter prioridade
+   sobre as transições definidas anteriormente.
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

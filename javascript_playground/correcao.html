@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Laboratório interativo para aprendizagem progressiva de JavaScript."
+    >
+
+    <title>JavaScript Playground</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         CABEÇALHO DO PROJETO
+         ========================================================= -->
+    <header class="site-header">
+        <div class="container header-content">
+            <div>
+                <p class="eyebrow">Laboratório Interativo</p>
+
+                <h1>JavaScript Playground</h1>
+
+                <p class="header-description">
+                    Aprenda JavaScript criando interações reais no navegador.
+                </p>
+            </div>
+
+            <div class="progress-card" aria-label="Progresso no laboratório">
+                <span class="progress-label">Módulo atual</span>
+                <strong id="current-module-label">01 / 12</strong>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =========================================================
+         NAVEGAÇÃO ENTRE OS MÓDULOS
+         ========================================================= -->
+    <nav class="module-navigation" aria-label="Navegação dos módulos">
+        <div class="container">
+            <div class="module-navigation-list">
+
+                <button class="module-nav-button active" data-module-target="module-01">
+                    01 Introdução
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-02">
+                    02 Eventos
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-03">
+                    03 DOM
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-04">
+                    04 Conteúdo
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-05">
+                    05 Estilos
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-06">
+                    06 Variáveis
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-07">
+                    07 Entradas
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-08">
+                    08 Decisões
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-09">
+                    09 Funções
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-10">
+                    10 DOM Dinâmico
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-11">
+                    11 Animações
+                </button>
+
+                <button class="module-nav-button" data-module-target="module-12">
+                    12 Assíncrono
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+         ========================================================= -->
+    <main class="container playground">
+
+        <!-- =====================================================
+             MÓDULO 01
+             ===================================================== -->
+        <section
+            class="module-section active"
+            id="module-01"
+            data-module-number="01"
+        >
+            <header class="module-header">
+                <span class="module-number">Módulo 01</span>
+                <h2>Introdução ao JavaScript</h2>
+                <p>
+                    Primeiros contatos com JavaScript e execução de comandos
+                    no navegador.
+                </p>
+            </header>
+
+            <div class="module-grid">
+                <article class="lesson-card">
+                    <span class="card-label">Conceito</span>
+                    <h3>O que aprenderemos?</h3>
+
+                    <div class="placeholder-content">
+                        Conteúdo planejado posteriormente.
+                    </div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="card-label">Demonstração</span>
+                    <h3>Experimente</h3>
+
+                    <div class="demo-area">
+                        Área da atividade prática.
+                    </div>
+                </article>
+
+                <article class="lesson-card code-card">
+                    <span class="card-label">Código</span>
+                    <h3>JavaScript utilizado</h3>
+
+                    <pre><code>// O código do módulo será adicionado aqui.</code></pre>
+                </article>
+
+                <article class="lesson-card challenge-card">
+                    <span class="card-label">Desafio</span>
+                    <h3>Sua vez</h3>
+
+                    <div class="placeholder-content">
+                        Desafio do módulo será planejado posteriormente.
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             MÓDULO 02
+             ===================================================== -->
+        <section
+            class="module-section"
+            id="module-02"
+            data-module-number="02"
+        >
+            <header class="module-header">
+                <span class="module-number">Módulo 02</span>
+                <h2>Eventos</h2>
+                <p>
+                    Interações realizadas pelo usuário e respostas do JavaScript.
+                </p>
+            </header>
+
+            <div class="module-grid">
+                <article class="lesson-card">
+                    <span class="card-label">Conceito</span>
+                    <h3>Eventos do navegador</h3>
+                    <div class="placeholder-content">Conteúdo futuro.</div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="card-label">Demonstração</span>
+                    <h3>Área interativa</h3>
+                    <div class="demo-area">Demonstração futura.</div>
+                </article>
+
+                <article class="lesson-card code-card">
+                    <span class="card-label">Código</span>
+                    <h3>JavaScript utilizado</h3>
+                    <pre><code>// Código do módulo 02.</code></pre>
+                </article>
+
+                <article class="lesson-card challenge-card">
+                    <span class="card-label">Desafio</span>
+                    <h3>Sua vez</h3>
+                    <div class="placeholder-content">Desafio futuro.</div>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             MÓDULOS 03 A 12
+             Mantemos a mesma estrutura visual para facilitar
+             o crescimento progressivo do projeto.
+             ===================================================== -->
+
+        <section class="module-section" id="module-03" data-module-number="03">
+            <header class="module-header">
+                <span class="module-number">Módulo 03</span>
+                <h2>Selecionando elementos do DOM</h2>
+                <p>Como o JavaScript encontra elementos existentes na página.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Seleção</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 03.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-04" data-module-number="04">
+            <header class="module-header">
+                <span class="module-number">Módulo 04</span>
+                <h2>Alterando conteúdo</h2>
+                <p>Manipulação de textos, valores e conteúdos da página.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Conteúdo</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 04.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-05" data-module-number="05">
+            <header class="module-header">
+                <span class="module-number">Módulo 05</span>
+                <h2>Alterando estilos</h2>
+                <p>Integração entre JavaScript e CSS.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Estilos</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 05.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-06" data-module-number="06">
+            <header class="module-header">
+                <span class="module-number">Módulo 06</span>
+                <h2>Variáveis e valores</h2>
+                <p>Armazenamento e alteração de informações durante a execução.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Dados</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 06.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-07" data-module-number="07">
+            <header class="module-header">
+                <span class="module-number">Módulo 07</span>
+                <h2>Entradas de dados</h2>
+                <p>Leitura de valores informados pelo usuário.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Inputs</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 07.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-08" data-module-number="08">
+            <header class="module-header">
+                <span class="module-number">Módulo 08</span>
+                <h2>Decisões</h2>
+                <p>Condições para fazer o programa escolher diferentes caminhos.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Condições</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 08.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-09" data-module-number="09">
+            <header class="module-header">
+                <span class="module-number">Módulo 09</span>
+                <h2>Funções</h2>
+                <p>Organização, reutilização e divisão das responsabilidades do código.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Funções</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 09.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-10" data-module-number="10">
+            <header class="module-header">
+                <span class="module-number">Módulo 10</span>
+                <h2>DOM dinâmico</h2>
+                <p>Criação, inserção e remoção de elementos com JavaScript.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Elementos dinâmicos</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 10.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-11" data-module-number="11">
+            <header class="module-header">
+                <span class="module-number">Módulo 11</span>
+                <h2>Animações e interações</h2>
+                <p>Controle de estados visuais e animações por meio do JavaScript.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Animações</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 11.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+        <section class="module-section" id="module-12" data-module-number="12">
+            <header class="module-header">
+                <span class="module-number">Módulo 12</span>
+                <h2>JavaScript assíncrono</h2>
+                <p>Busca de dados externos e comportamento assíncrono.</p>
+            </header>
+            <div class="module-grid">
+                <article class="lesson-card"><span class="card-label">Conceito</span><h3>Assincronismo</h3><div class="placeholder-content">Conteúdo futuro.</div></article>
+                <article class="lesson-card"><span class="card-label">Demonstração</span><h3>Área interativa</h3><div class="demo-area">Demonstração futura.</div></article>
+                <article class="lesson-card code-card"><span class="card-label">Código</span><h3>JavaScript utilizado</h3><pre><code>// Código do módulo 12.</code></pre></article>
+                <article class="lesson-card challenge-card"><span class="card-label">Desafio</span><h3>Sua vez</h3><div class="placeholder-content">Desafio futuro.</div></article>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         RODAPÉ
+         ========================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                JavaScript Playground — laboratório progressivo de aprendizagem.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript carregado no final para garantir que
+         os elementos HTML já existam quando o arquivo for executado. -->
+    <script src="script.js"></script>
+
+</body>
+</html>
